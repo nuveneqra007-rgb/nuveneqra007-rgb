@@ -9,12 +9,15 @@ import { GitHubAnalyticsSection } from './components/GitHubAnalyticsSection';
 import { MissionsSection } from './components/MissionsSection';
 import { ContactSection, ContactModal } from './components/ContactSection';
 import { InteractiveTerminal } from './components/InteractiveTerminal';
+import { ReadmeModal } from './components/ReadmeModal';
+import { README_MARKDOWN } from './data/readmeRaw';
 import { Footer } from './components/Footer';
 import { ArrowUp, Terminal as TerminalIcon } from 'lucide-react';
 
 export const App: React.FC = () => {
   const [terminalOpen, setTerminalOpen] = useState(false);
   const [contactModalOpen, setContactModalOpen] = useState(false);
+  const [readmeModalOpen, setReadmeModalOpen] = useState(false);
   const [showScrollTop, setShowScrollTop] = useState(false);
 
   useEffect(() => {
@@ -62,6 +65,7 @@ export const App: React.FC = () => {
       <Navbar
         onOpenTerminal={() => setTerminalOpen(true)}
         onOpenContact={() => setContactModalOpen(true)}
+        onOpenReadme={() => setReadmeModalOpen(true)}
       />
 
       {/* Main Content Sections */}
@@ -101,6 +105,13 @@ export const App: React.FC = () => {
       <ContactModal
         isOpen={contactModalOpen}
         onClose={() => setContactModalOpen(false)}
+      />
+
+      {/* README.md Source & Copy Modal */}
+      <ReadmeModal
+        isOpen={readmeModalOpen}
+        onClose={() => setReadmeModalOpen(false)}
+        markdownContent={README_MARKDOWN}
       />
 
       {/* Floating Action Button for Terminal & Scroll to top */}

@@ -29,7 +29,7 @@ const alexander = {
   role     : "Full-Stack Developer",
   location : "República Dominicana 🇩🇴",
   focus    : ["Web Development", "3D Web Experiences", "Full-Stack Architecture", "UI/UX"],
-  stack    : ["TypeScript", "React", "Vite", "Three.js", "GSAP", "Python", "FastAPI"],
+  stack    : ["TypeScript", "React", "Vite", "Three.js", "GSAP", "Python", "FastAPI", "Node.js"],
   learning : ["Node.js", "Python", "FastAPI", "Supabase", "Cloud Architecture"],
   mindset  : "Learn → Build → Improve → Repeat 🔁",
   goal     : "Convert ideas into premium digital experiences.",
@@ -37,7 +37,7 @@ const alexander = {
 };
 ```
 
-Desarrollador full-stack apasionado por crear **interfaces modernas, animadas e impactantes** y servicios escalables. Me especializo en experiencias web con React, animaciones GSAP, gráficos 3D con Three.js y backends modernos con Python/FastAPI y Node.js. Siempre aprendiendo, siempre construyendo.
+Desarrollador full-stack apasionado por crear **interfaces modernas, animadas e impactantes** y servicios escalables. Me especializo en experiencias web con React, animaciones fluidas con GSAP, gráficos 3D interactivos con Three.js y desarrollo backend moderno con Python/FastAPI y Node.js. Siempre aprendiendo, siempre construyendo.
 
 <br/>
 
@@ -61,6 +61,7 @@ Desarrollador full-stack apasionado por crear **interfaces modernas, animadas e 
 
 **Backend & DB**
 
+![Node.js](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)
 ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white)
 ![Supabase](https://img.shields.io/badge/Supabase-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white)
@@ -76,23 +77,24 @@ Desarrollador full-stack apasionado por crear **interfaces modernas, animadas e 
 
 <br/>
 
-## `03` — Proyectos Destacados
+## `03` — Proyectos Destacados & Repositorios
 
 <div align="center">
 
-| Proyecto | Descripción | Stack | Demo |
-|---|---|---|---|
-| **⚡ Portfolio 3D** | Portafolio personal con partículas, GSAP y scroll suavizado | `React` `TS` `GSAP` | [Ver →](https://portafolio-3d-alexander.vercel.app/) |
-| **⚔️ SuperN-0.1** | 2D platform fighter inspirado en Superfighters Deluxe | `Godot 4` `C#` `TS` | [Ver →](https://supern01.vercel.app/) |
-| **🤖 Nova AI** | Asistente de investigación IA con persistencia en la nube | `React` `FastAPI` `Supabase` | [Ver →](https://nova-ai-three-zeta.vercel.app/) |
-| **🛡️ SecScanner** | Escáner de seguridad web y análisis de vulnerabilidades | `TypeScript` `React` `Node` | [Ver →](https://secscanner-theta.vercel.app/) |
-| **🌌 Sistema Solar 3D** | Simulación interactiva del sistema solar en 3D | `Three.js` `React` `TS` | [Ver →](https://sistema-solar-3d-three.vercel.app/) |
-| **💊 Sistema Farmacia** | Plataforma de gestión farmacéutica e inventario | `React` `JS` `Tailwind` | [Ver →](https://sistema-de-farmacia.vercel.app/) |
-| **🥤 CoKeLaB** | Landing page premium con animaciones fluidas | `React` `CSS3` `TS` | [Ver →](https://cokelab.vercel.app/) |
-| **🎯 Aim Trainer** | Juego web competitivo para entrenar reflejos y puntería | `React` `JS` | [Ver →](https://aim-trainerrr.vercel.app/) |
-| **🚗 Apex Motors** | Concesionario premium · diseño moderno y minimalista | `HTML` `CSS` `JS` | [Ver →](https://apex-motors-lyart.vercel.app/) |
-| **🏥 Der-Fel Clínica** | Plataforma web para clínica médica · UI limpia y funcional | `React` `TS` | [Ver →](https://clinica-medicare-der-fel.vercel.app/) |
-| **🌐 Alexander Web** | Sitio web personal y enlaces centrales | `HTML` `CSS` `JS` | [Ver →](https://nuveneqra007-rgb-github-io.vercel.app/) |
+| Proyecto | Descripción | Stack | Repositorio | Demo |
+|---|---|---|---|---|
+| **⚡ Portfolio 3D** | Portafolio personal con partículas, GSAP y scroll suavizado | `React` `TS` `GSAP` | [Código →](https://github.com/nuveneqra007-rgb/portafolio-3d-Alexander) | [Ver Demo ↗](https://portafolio-3d-alexander.vercel.app/) |
+| **⚔️ SuperN-0.1** | 2D platform fighter inspirado en Superfighters Deluxe | `Godot 4` `C#` `TS` | [Código →](https://github.com/nuveneqra007-rgb/superN-0.1) | [Ver Demo ↗](https://supern01.vercel.app/) |
+| **🤖 Nova AI** | Asistente de investigación IA con persistencia en la nube | `React` `FastAPI` `Supabase` | [Código →](https://github.com/nuveneqra007-rgb) | [Ver Demo ↗](https://nova-ai-three-zeta.vercel.app/) |
+| **🛡️ SecScanner** | Escáner de seguridad web, cabeceras HTTP y auditoría | `TypeScript` `React` `Node` | [Código →](https://github.com/nuveneqra007-rgb/secscanner) | [Ver Demo ↗](https://secscanner-theta.vercel.app/) |
+| **🌌 Sistema Solar 3D** | Simulación interactiva del sistema solar en 3D | `Three.js` `React` `TS` | [Código →](https://github.com/nuveneqra007-rgb/sistema-solar) | [Ver Demo ↗](https://sistema-solar-3d-three.vercel.app/) |
+| **💊 Sistema Farmacia** | Gestión farmacéutica, stock de medicamentos y facturación | `React` `JS` `Tailwind` | [Código →](https://github.com/nuveneqra007-rgb/frontend) | [Ver Demo ↗](https://sistema-de-farmacia.vercel.app/) |
+| **🥤 CoKeLaB** | Landing page premium con animaciones fluidas | `React` `CSS3` `TS` | [Código →](https://github.com/nuveneqra007-rgb/cocalet) | [Ver Demo ↗](https://cokelab.vercel.app/) |
+| **🎯 Aim Trainer** | Juego web competitivo para entrenar reflejos y puntería | `React` `JS` | [Código →](https://github.com/nuveneqra007-rgb/juego-de-punueris) | [Ver Demo ↗](https://aim-trainerrr.vercel.app/) |
+| **🚗 Apex Motors** | Concesionario premium · diseño moderno y minimalista | `HTML` `CSS` `JS` | [Código →](https://github.com/nuveneqra007-rgb/apex-motors) | [Ver Demo ↗](https://apex-motors-lyart.vercel.app/) |
+| **🏥 Der-Fel Clínica** | Plataforma web para clínica médica · UI limpia y funcional | `React` `TS` | [Código →](https://github.com/nuveneqra007-rgb/der-fel-clinica) | [Ver Demo ↗](https://clinica-medicare-der-fel.vercel.app/) |
+| **🌐 Alexander Web** | Sitio web personal y presencia en GitHub Pages | `HTML` `CSS` `JS` | [Código →](https://github.com/nuveneqra007-rgb/nuveneqra007-rgb.github.io) | [Ver Demo ↗](https://nuveneqra007-rgb-github-io.vercel.app/) |
+| **⚙️ Backend Core API** | Servicios de backend modular, endpoints REST y datos | `Node.js` `Express` `API` | [Código →](https://github.com/nuveneqra007-rgb/backend) | *API / Backend* |
 
 </div>
 

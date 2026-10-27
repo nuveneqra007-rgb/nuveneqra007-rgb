@@ -6,9 +6,10 @@ import { PROFILE_DATA } from '../data/portfolioData';
 interface NavbarProps {
   onOpenTerminal?: () => void;
   onOpenContact?: () => void;
+  onOpenReadme?: () => void;
 }
 
-export const Navbar: React.FC<NavbarProps> = ({ onOpenTerminal, onOpenContact }) => {
+export const Navbar: React.FC<NavbarProps> = ({ onOpenTerminal, onOpenContact, onOpenReadme }) => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -86,6 +87,17 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenTerminal, onOpenContact })
             </button>
           )}
 
+          {/* README.md Copier */}
+          {onOpenReadme && (
+            <button
+              onClick={onOpenReadme}
+              title="Ver y Copiar README.md para GitHub"
+              className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-cyan-950/60 border border-cyan-500/40 hover:border-cyan-400 text-cyan-300 text-xs font-mono transition"
+            >
+              <span className="text-cyan-400 font-bold">README.md</span>
+            </button>
+          )}
+
           {/* GitHub Link */}
           <a
             href={PROFILE_DATA.githubUrl}
@@ -156,6 +168,17 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenTerminal, onOpenContact })
             </a>
           ))}
           <div className="pt-2 flex flex-col gap-2">
+            {onOpenReadme && (
+              <button
+                onClick={() => {
+                  setMobileMenuOpen(false);
+                  onOpenReadme();
+                }}
+                className="flex items-center justify-center gap-2 py-2 rounded-lg bg-cyan-950/70 border border-cyan-500/40 text-cyan-300 text-xs font-mono font-bold"
+              >
+                <span>📋 Ver / Copiar README.md</span>
+              </button>
+            )}
             <a
               href={PROFILE_DATA.portfolioUrl}
               target="_blank"
