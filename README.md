@@ -26,18 +26,18 @@
 
 ```ts
 const alexander = {
-  role     : "Frontend Developer",
+  role     : "Full-Stack Developer",
   location : "República Dominicana 🇩🇴",
-  focus    : ["Web Development", "3D Web Experiences", "UI/UX"],
-  stack    : ["TypeScript", "React", "Vite", "Three.js", "GSAP"],
-  learning : ["Node.js", "Python", "FastAPI", "Supabase"],
+  focus    : ["Web Development", "3D Web Experiences", "Full-Stack Architecture", "UI/UX"],
+  stack    : ["TypeScript", "React", "Vite", "Three.js", "GSAP", "Python", "FastAPI"],
+  learning : ["Node.js", "Python", "FastAPI", "Supabase", "Cloud Architecture"],
   mindset  : "Learn → Build → Improve → Repeat 🔁",
   goal     : "Convert ideas into premium digital experiences.",
   openTo   : "Freelance · Collaborations · Remote Work",
 };
 ```
 
-Desarrollador frontend apasionado por crear **interfaces modernas, animadas e impactantes**. Me especializo en experiencias web con React, animaciones GSAP y gráficos 3D con Three.js. Siempre aprendiendo, siempre construyendo.
+Desarrollador full-stack apasionado por crear **interfaces modernas, animadas e impactantes** y servicios escalables. Me especializo en experiencias web con React, animaciones GSAP, gráficos 3D con Three.js y backends modernos con Python/FastAPI y Node.js. Siempre aprendiendo, siempre construyendo.
 
 <br/>
 
@@ -83,12 +83,16 @@ Desarrollador frontend apasionado por crear **interfaces modernas, animadas e im
 | Proyecto | Descripción | Stack | Demo |
 |---|---|---|---|
 | **⚡ Portfolio 3D** | Portafolio personal con partículas, GSAP y scroll suavizado | `React` `TS` `GSAP` | [Ver →](https://portafolio-3d-alexander.vercel.app/) |
+| **⚔️ SuperN-0.1** | 2D platform fighter inspirado en Superfighters Deluxe | `Godot 4` `C#` `TS` | [Ver →](https://supern01.vercel.app/) |
 | **🤖 Nova AI** | Asistente de investigación IA con persistencia en la nube | `React` `FastAPI` `Supabase` | [Ver →](https://nova-ai-three-zeta.vercel.app/) |
+| **🛡️ SecScanner** | Escáner de seguridad web y análisis de vulnerabilidades | `TypeScript` `React` `Node` | [Ver →](https://secscanner-theta.vercel.app/) |
 | **🌌 Sistema Solar 3D** | Simulación interactiva del sistema solar en 3D | `Three.js` `React` `TS` | [Ver →](https://sistema-solar-3d-three.vercel.app/) |
+| **💊 Sistema Farmacia** | Plataforma de gestión farmacéutica e inventario | `React` `JS` `Tailwind` | [Ver →](https://sistema-de-farmacia.vercel.app/) |
 | **🥤 CoKeLaB** | Landing page premium con animaciones fluidas | `React` `CSS3` `TS` | [Ver →](https://cokelab.vercel.app/) |
 | **🎯 Aim Trainer** | Juego web competitivo para entrenar reflejos y puntería | `React` `JS` | [Ver →](https://aim-trainerrr.vercel.app/) |
 | **🚗 Apex Motors** | Concesionario premium · diseño moderno y minimalista | `HTML` `CSS` `JS` | [Ver →](https://apex-motors-lyart.vercel.app/) |
 | **🏥 Der-Fel Clínica** | Plataforma web para clínica médica · UI limpia y funcional | `React` `TS` | [Ver →](https://clinica-medicare-der-fel.vercel.app/) |
+| **🌐 Alexander Web** | Sitio web personal y enlaces centrales | `HTML` `CSS` `JS` | [Ver →](https://nuveneqra007-rgb-github-io.vercel.app/) |
 
 </div>
 
