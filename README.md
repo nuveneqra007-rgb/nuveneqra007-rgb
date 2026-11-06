@@ -149,7 +149,7 @@ Desarrollador full-stack apasionado por crear **interfaces modernas, animadas e 
 
 [![Portfolio](https://img.shields.io/badge/🌐%20MI%20PORTFOLIO-00D9FF?style=for-the-badge&logoColor=white&labelColor=000000&color=000000)](https://portafolio-3d-alexander.vercel.app/)
 &nbsp;
-[![Email](https://img.shields.io/badge/📧%20nuveneqra007%40gmail.com-000000?style=for-the-badge&color=000000)](mailto:nuveneqra007@gmail.com)
+[![Email](https://img.shields.io/badge/📧%20miguelalexanderlopezmendosa23%40gmail.com-000000?style=for-the-badge&color=000000)](mailto:nuveneqra007@gmail.com)
 
 <br/>
 
