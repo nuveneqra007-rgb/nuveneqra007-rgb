@@ -1,17 +1,3 @@
-<div align="center">
-
-<!-- ── HERO CINEMÁTICO: ONDAS FLUIDAS MONOCROMÁTICAS ── -->
-<img src="assets/dark_fluid_waves.gif" width="100%" alt="Dark Fluid Waves Banner" style="border-radius: 14px;" />
-
-<br/><br/>
-
-<!-- ── AVATAR OCTOCAT DEAL WITH IT ── -->
-<a href="https://github.com/nuveneqra007-rgb">
-  <img src="assets/octocat_dark.jpg" width="125" height="125" style="border-radius: 50%; border: 2px solid #333333; box-shadow: 0 0 25px rgba(255,255,255,0.1);" alt="Alexander Octocat" />
-</a>
-
-<br/><br/>
-
 <!-- ── BANNER ASCII GLITCH: HELLO WORLD (ESTILO PGERIG) ── -->
 <img src="assets/hello_world.svg" width="100%" alt="Hello World ASCII" />
 
