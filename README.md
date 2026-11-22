@@ -96,7 +96,7 @@
   <img width="16" />
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" height="38" alt="Linux" title="Linux (Debian / Kali / Ubuntu)" />
   <img width="16" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wireshark/wireshark-original.svg" height="38" alt="Wireshark" title="Wireshark" />
+  <img src="[https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wireshark/wireshark-original.svg](https://dashboardicons.com/icons/wireshark)" height="38" alt="Wireshark" title="Wireshark" />
   <img width="16" />
   <img src="https://img.shields.io/badge/OWASP-000000?style=for-the-badge&logo=owasp&logoColor=white" height="38" alt="OWASP" title="OWASP Top 10" />
 </p>
