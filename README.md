@@ -27,6 +27,10 @@
   </a>
 </p>
 
+<p align="center">
+  <sub>⚡ <b>Directiva Activa:</b> Desarrollando motores de análisis de amenazas para <a href="https://secscanner.dpdns.org/">SecScanner</a> · Explorando shaders en Three.js & WebGL</sub>
+</p>
+
 </div>
 
 ---
@@ -149,7 +153,25 @@ Status      : [ ONLINE ] Available for innovative missions
 
 <br/>
 
-<!-- ── SNAKE CONTRIBUTION GRID ANIMATION ── -->
+<!-- ── SECCIÓN 03: PROYECTOS INSIGNIA ── -->
+## `03` — Proyectos Destacados
+
+<div align="center">
+
+| Proyecto | Especialidad | Stack Tecnológico | Acceso |
+| :--- | :--- | :--- | :---: |
+| 🛡️ **[SecScanner](https://secscanner.dpdns.org/)** | Web Threat Intelligence & Scanner | `Next.js 16` `TypeScript` `AppSec` `Tailwind` | [**Live Demo ↗**](https://secscanner.dpdns.org/) |
+| 🌌 **[Portafolio 3D](https://portafolio-3d-alexander.vercel.app/)** | Interactive WebGL & Spatial Experience | `Three.js` `React` `GSAP` `Vite` | [**Live Demo ↗**](https://portafolio-3d-alexander.vercel.app/) |
+
+</div>
+
+<br/>
+
+---
+
+<br/>
+
+<!-- ── ACTIVIDAD: SNAKE CONTRIBUTION GRID ── -->
 <div align="center">
 
 <img src="assets/snake.svg" width="100%" alt="Snake Game Contribution Animation" />
