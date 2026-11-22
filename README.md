@@ -1,5 +1,7 @@
-<!-- ── BANNER ASCII GLITCH: HELLO WORLD (ESTILO PGERIG) ── -->
-<img src="assets/hello_world.svg" width="100%" alt="Hello World ASCII" />
+<div align="center">
+
+<!-- ── HERO CYBER HUD: HELLO WORLD ANIMADO (DEJA VU MONO / ANSI SHADOW) ── -->
+<img src="assets/hello_world.gif" width="100%" alt="Hello World Cyber HUD" />
 
 <br/>
 
@@ -20,7 +22,7 @@
     <img src="https://img.shields.io/badge/🛡️%20SECSCANNER%20LIVE-000000?style=for-the-badge&logoColor=FFFFFF&color=121212&labelColor=000000" alt="SecScanner"/>
   </a>
   &nbsp;
-  <a href="miguelalexanderlopezmendosa23@gmail.com">
+  <a href="mailto:miguelalexanderlopezmendosa23@gmail.com">
     <img src="https://img.shields.io/badge/📧%20CONTACTO-000000?style=for-the-badge&color=121212&labelColor=000000" alt="Contacto"/>
   </a>
 </p>
@@ -138,6 +140,39 @@
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vercel/vercel-original.svg" height="38" alt="Vercel" title="Vercel" />
   <img width="16" />
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" height="38" alt="VS Code" title="VS Code" />
+</p>
+
+</div>
+
+<br/>
+
+---
+
+<br/>
+
+<!-- ── SECCIÓN 03: TELEMETRÍA Y ACTIVIDAD CYBER ── -->
+## `03` — Actividad & Telemetría
+
+<div align="center">
+
+<br/>
+
+<!-- Dynamic Activity Wave -->
+<a href="https://github.com/nuveneqra007-rgb">
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=nuveneqra007-rgb&theme=github-dark&bg_color=0A0A0A&color=FFFFFF&line=FFFFFF&point=555555&area=true&hide_border=true" width="100%" alt="Activity Graph" />
+</a>
+
+<br/><br/>
+
+<!-- Streak & Stats Grid -->
+<p align="center">
+  <a href="https://github.com/nuveneqra007-rgb">
+    <img src="https://github-readme-streak-stats.herokuapp.com/?user=nuveneqra007-rgb&theme=dark&background=0A0A0A&border=262626&stroke=FFFFFF&ring=FFFFFF&fire=FFFFFF&currStreakNum=FFFFFF&sideNums=A3A3A3&sideLabels=888888&dates=666666" alt="GitHub Streak" />
+  </a>
+  &nbsp;&nbsp;
+  <a href="https://github.com/nuveneqra007-rgb">
+    <img src="https://github-readme-stats.vercel.app/api?username=nuveneqra007-rgb&show_icons=true&theme=dark&bg_color=0A0A0A&border_color=262626&title_color=FFFFFF&text_color=A3A3A3&icon_color=FFFFFF&hide_border=false" alt="GitHub Stats" />
+  </a>
 </p>
 
 </div>
