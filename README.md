@@ -20,7 +20,7 @@
     <img src="https://img.shields.io/badge/🛡️%20SECSCANNER%20LIVE-000000?style=for-the-badge&logoColor=FFFFFF&color=121212&labelColor=000000" alt="SecScanner"/>
   </a>
   &nbsp;
-  <a href="mailto:nuveneqra007@gmail.com">
+  <a href="miguelalexanderlopezmendosa23@gmail.com">
     <img src="https://img.shields.io/badge/📧%20CONTACTO-000000?style=for-the-badge&color=121212&labelColor=000000" alt="Contacto"/>
   </a>
 </p>
