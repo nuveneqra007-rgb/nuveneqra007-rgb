@@ -38,22 +38,21 @@
 
 ```text
 ┌──[ alexander@nuveneqra007 ] - [ ~ ]
-└─$ cat profile.json
+└─$ fastfetch --sec-profile
 ```
 
-```json
-{
-  "developer": "Alexander",
-  "role": "Full-Stack Developer & Cybersecurity Enthusiast",
-  "location": "República Dominicana 🇩🇴",
-  "focus": [
-    "Modern Full-Stack Architecture",
-    "Application Security (AppSec) & Threat Hunting",
-    "Interactive 3D Web & Creative Experiences"
-  ],
-  "mindset": "Build elegant · Break limits · Secure everything",
-  "status": "Disponible para proyectos innovadores & colaboraciones"
-}
+```yaml
+alexander@nuveneqra007
+----------------------
+OS          : Linux (Debian / Kali / Ubuntu)
+Role        : Full-Stack Developer & AppSec Enthusiast
+Location    : República Dominicana 🇩🇴
+Kernel      : Next.js 16 · TypeScript · Python · Three.js
+Focus       : Threat Intelligence · Application Security · 3D Web
+Arsenal     : React · FastAPI · Node.js · Linux · Wireshark · Docker
+Flagships   : SecScanner (Live Threat Intel) · Portafolio 3D
+Mindset     : Build elegant · Break limits · Secure everything
+Status      : [ ONLINE ] Available for innovative missions
 ```
 
 > *"Transformando código en experiencias visuales fluidas de alto rendimiento y arquitecturas web seguras y resilientes."*
