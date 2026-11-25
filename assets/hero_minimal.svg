@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 210" width="880" height="210" role="img" aria-label="Alexander López — Full-Stack Developer &amp; AppSec">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0D1117"/>
+      <stop offset="100%" stop-color="#111720"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#00FF66" stop-opacity="0.14"/>
+      <stop offset="100%" stop-color="#00FF66" stop-opacity="0"/>
+    </radialGradient>
+    <style>
+      .card {
+        fill: url(#bgGrad);
+        stroke: #21262D;
+        stroke-width: 1.5;
+      }
+      .tag {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 1.6px;
+        fill: #8B949E;
+      }
+      .name {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+        font-size: 38px;
+        font-weight: 700;
+        fill: #F0F6FC;
+        letter-spacing: -0.5px;
+      }
+      .role {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+        font-size: 16px;
+        font-weight: 400;
+        fill: #8B949E;
+      }
+      .meta {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+        font-size: 12.5px;
+        fill: #6E7681;
+      }
+      .pixel {
+        image-rendering: pixelated;
+        image-rendering: crisp-edges;
+      }
+      @keyframes floatNinja {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-10px); }
+      }
+      @keyframes shadowPulse {
+        0%, 100% { transform: scaleX(1); opacity: 0.45; }
+        50% { transform: scaleX(0.78); opacity: 0.22; }
+      }
+      .ninja-wrap {
+        animation: floatNinja 3.2s ease-in-out infinite;
+      }
+      .shadow-wrap {
+        transform-origin: 735px 168px;
+        animation: shadowPulse 3.2s ease-in-out infinite;
+      }
+    </style>
+  </defs>
+
+  <rect class="card" x="1" y="1" width="878" height="208" rx="16"/>
+
+  <!-- Subtle ambient glow behind character -->
+  <circle cx="735" cy="105" r="76" fill="url(#glow)"/>
+
+  <!-- Left: Clean typography -->
+  <g transform="translate(52, 58)">
+    <circle cx="5" cy="-4" r="4" fill="#00FF66"/>
+    <text x="18" y="0" class="tag">NUVENEQRA007</text>
+
+    <text x="0" y="48" class="name">Alexander López</text>
+    <text x="0" y="80" class="role">Full-Stack Developer · AppSec · 3D Web</text>
+    <text x="0" y="114" class="meta">República Dominicana</text>
+  </g>
+
+  <!-- Right: Floating pixel-art ninja -->
+  <g class="shadow-wrap">
+    <ellipse cx="735" cy="168" rx="34" ry="7" fill="#000000"/>
+  </g>
+  <g class="ninja-wrap">
+    <image class="pixel" x="680" y="42" width="110" height="120" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEUAAABLCAYAAAAmh0pZAAAC2UlEQVR4AeyYwXXCMAyGRadgDLpBhugIPXaEHhmBY0dgCA4dgDE4dgNqP2I/4fxxbEfBJqgvahzZluTPEoa8kf4NCCiUARIihaJQAAGg0kxRKIAAUGmmKBRAAKg0UxQKIABUmikKBRAAKs0UhQIIANV6MwUsNlU1F8rVOJIWY7LuNRdK3egX8q5QAFgxKLvdjnaFAuKqqhKDUnUVws4VCgC6CJTz+UznDAFxVVUtAqXqigScKxQAUQzK5XIhJ9fjnrz8fNG1F+7f95uxXN9CWwxKC4uRikGhAJJzoWyMTSemebve90fycvil9174lzvfb8beZrXzfy6UdlYiGEnjUARXmmEqBiXrlYA7ecL7WCx83NiYWvoYlFoxVferUMAWhFB8yWy3WyoVXhpjv4H4mCAuH0Ogf9hjCOVhjlt2pFDA7lgoPl15ufD0zm0DP6UqH1upgZJ5FkrJvFXPUShge++g8DIBY6Oqruuo66Xl1wLRRfSdd1B63cvfFApIAQvF/fS3dzAkTXU6nejUS9qM7FH8JOLtbENTEyyUqTEv1/8IKE8HNYRiS8hJ+WL+LkROyq3czez6k83eg9NNvJRCKHeBvOqDQgE7H4PiysjewdRx1ebzQE7GR+X1uJPN3vNm5o+OQcm3tpIZCgVsZCoUW0JTAszPVnGf3tjm45uceKVgIxWKoMv2TSkUsEetQ+FfzHgpjbXBEvNVrUPJX5HADIUCIM6FwtMbmM9X8ZfnwWxxX4F9/zgXije0pkYylDUtemotJVAm0zhSApOnBn95HrEzGcPUwmP9JVBi9lbRp1DANopB4anOS8D45CVjHuEFx3A73D60IKgUgyIYU3VTCgVsQSoU+GnPU5qnuvEDy8Hox66l7Y/5hfpUKHDyWpUKBexsDMrSKb20fbDcNFUMSpqFFY5SKGBTs6HwU4afPsY2LAejz7qWtp8STDaUFKPPNWYYrUIZMqF/AAAA//+foXqxAAAABklEQVQDALrmkTgpmmpHAAAAAElFTkSuQmCC"/>
+  </g>
+</svg>

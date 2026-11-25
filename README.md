@@ -1,7 +1,7 @@
 <div align="center">
 
-<!-- ── HERO CYBER HUD: HELLO WORLD ANIMADO (TERMINAL GREEN #00FF66) ── -->
-<img src="assets/hello_world.gif" width="100%" alt="Hello World Cyber HUD" />
+<!-- ── HERO MINIMALISTA: ALEXANDER + NINJA FLOTANTE ── -->
+<img src="assets/hero_minimal.svg" width="100%" alt="Alexander López — Full-Stack Developer & AppSec" />
 
 <br/>
 
@@ -29,25 +29,17 @@
 
 </div>
 
-<img src="assets/hud_divider.svg" width="100%" alt="HUD Divider" />
+---
 
-<!-- ── SECCIÓN 01: SOBRE MÍ (PANEL CYBER HUD ANIMADO) ── -->
-## `┏━ [ 01 // SOBRE_MÍ ]`
+### Sobre mí
 
-<div align="center">
-  <img src="assets/hud_identity.svg" width="100%" alt="Alexander Cyber HUD Identity" />
-</div>
+Soy desarrollador Full-Stack y entusiasta de la ciberseguridad desde **República Dominicana**. Construyo aplicaciones web modernas, experiencias interactivas en 3D y herramientas enfocadas en seguridad defensiva y análisis de amenazas (**SecScanner**, **Nova AI**, **Portfolio 3D**).
 
-<br/>
+> *"Transformando código en experiencias visuales fluidas de alto rendimiento y arquitecturas web seguras y resilientes."*
 
-> *"Transformando código en experiencias visuales fluidas de alto rendimiento y arquitecturas web seguras y resilientes."* — `SYS_DIRECTIVE // 00`
+---
 
-<br/>
-
-<img src="assets/hud_divider.svg" width="100%" alt="HUD Divider" />
-
-<!-- ── SECCIÓN 02: TECH STACK ── -->
-## `┏━ [ 02 // TECH_STACK ]`
+### Tech Stack
 
 <div align="center">
 
@@ -128,7 +120,7 @@
 
 <br/>
 
-<img src="assets/hud_divider.svg" width="100%" alt="HUD Divider" />
+---
 
 <!-- ── ACTIVIDAD: SNAKE CONTRIBUTION GRID ── -->
 <div align="center">
