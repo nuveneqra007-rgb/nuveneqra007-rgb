@@ -5,9 +5,9 @@
 
 <br/>
 
-<!-- ── ANIMACIÓN DE ESCRITURA TYPING SVG (VERDE TERMINAL) ── -->
+<!-- ── ANIMACIÓN DE ESCRITURA TYPING SVG (CARACTERES ESPECIALES) ── -->
 <a href="https://github.com/nuveneqra007-rgb">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=21&duration=2800&pause=900&color=00FF66&center=true&vCenter=true&width=720&height=46&lines=%3E_Alexander+%2F%2F+nuveneqra007;%E2%97%88+Full-Stack+Developer+%7C+Creative+Coder+%E2%9A%A1;%E2%9F%81+Cybersecurity+%26+Threat+Analyst+%F0%9F%94%A1;%E2%8C%A3+3D+Web+Experiences+%7C+Three.js+%2B+React;%E2%8C%96+Application+Security+%7C+Offensive+%26+Defensive+%F0%9F%94%8D" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=20&duration=2800&pause=900&color=6EE858&center=true&vCenter=true&width=720&height=46&lines=%E2%9D%AF%20Alexander%20%2F%2F%20nuveneqra007;%E2%97%88%20Full-Stack%20Developer%20%C2%B7%20Creative%20Coder;%E2%9F%81%20Cybersecurity%20%26%20Threat%20Analyst;%E2%8C%98%203D%20Web%20Experiences%20%C2%B7%20Three.js%20%2B%20React;%E2%8C%96%20AppSec%20%C2%B7%20Offensive%20%26%20Defensive" alt="Typing SVG" />
 </a>
 
 <br/>
