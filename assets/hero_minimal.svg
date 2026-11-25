@@ -1,43 +1,52 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 210" width="880" height="210" role="img" aria-label="Alexander López — Full-Stack Developer &amp; AppSec">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 235" width="900" height="235" role="img" aria-label="Alexander López — Full-Stack Developer &amp; AppSec">
   <defs>
-    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0D1117"/>
-      <stop offset="100%" stop-color="#111720"/>
+    <!-- Vibrant emerald waving palette harmonized with capsule-render footer (050706 -> 141A16 -> 004D26) -->
+    <linearGradient id="waveGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#050706"/>
+      <stop offset="48%" stop-color="#141A16"/>
+      <stop offset="100%" stop-color="#005E2E"/>
     </linearGradient>
-    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#00FF66" stop-opacity="0.14"/>
-      <stop offset="100%" stop-color="#00FF66" stop-opacity="0"/>
+    <linearGradient id="waveGrad2" x1="0%" y1="80%" x2="100%" y2="20%">
+      <stop offset="0%" stop-color="#004D26" stop-opacity="0.48"/>
+      <stop offset="55%" stop-color="#00B85C" stop-opacity="0.26"/>
+      <stop offset="100%" stop-color="#004D26" stop-opacity="0.38"/>
+    </linearGradient>
+    <linearGradient id="waveRim" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#004D26" stop-opacity="0.3"/>
+      <stop offset="50%" stop-color="#00E676" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#004D26" stop-opacity="0.3"/>
+    </linearGradient>
+    <linearGradient id="wordGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#8DF25A"/>
+      <stop offset="100%" stop-color="#48D456"/>
+    </linearGradient>
+    <radialGradient id="ninjaGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#00FF66" stop-opacity="0.24"/>
+      <stop offset="60%" stop-color="#006633" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#004D26" stop-opacity="0"/>
     </radialGradient>
+    <clipPath id="heroWaveClip">
+      <path d="M 0,16 Q 0,0 16,0 L 884,0 Q 900,0 900,16 L 900,184 C 745,232 585,154 420,192 C 245,232 108,176 0,204 Z"/>
+    </clipPath>
     <style>
-      .card {
-        fill: url(#bgGrad);
-        stroke: #21262D;
-        stroke-width: 1.5;
-      }
-      .tag {
+      .kicker {
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-        font-size: 12px;
-        font-weight: 600;
-        letter-spacing: 1.6px;
-        fill: #8B949E;
+        font-size: 13px;
+        font-weight: 500;
+        letter-spacing: 0.6px;
+        fill: #A7BEB0;
       }
-      .name {
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-        font-size: 38px;
-        font-weight: 700;
-        fill: #F0F6FC;
-        letter-spacing: -0.5px;
-      }
-      .role {
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-        font-size: 16px;
+      .tagline {
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 17px;
         font-weight: 400;
-        fill: #8B949E;
+        fill: #F2F7F4;
+        letter-spacing: 0.2px;
       }
-      .meta {
-        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      .submeta {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
         font-size: 12.5px;
-        fill: #6E7681;
+        fill: #96B3A2;
       }
       .pixel {
         image-rendering: pixelated;
@@ -45,42 +54,77 @@
       }
       @keyframes floatNinja {
         0%, 100% { transform: translateY(0px); }
-        50% { transform: translateY(-10px); }
+        50% { transform: translateY(-9px); }
       }
       @keyframes shadowPulse {
-        0%, 100% { transform: scaleX(1); opacity: 0.45; }
-        50% { transform: scaleX(0.78); opacity: 0.22; }
+        0%, 100% { transform: scaleX(1); opacity: 0.48; }
+        50% { transform: scaleX(0.76); opacity: 0.22; }
+      }
+      @keyframes waveDrift {
+        0%, 100% { transform: translateX(0px); }
+        50% { transform: translateX(-20px); }
       }
       .ninja-wrap {
         animation: floatNinja 3.2s ease-in-out infinite;
       }
       .shadow-wrap {
-        transform-origin: 735px 168px;
+        transform-origin: 774px 164px;
         animation: shadowPulse 3.2s ease-in-out infinite;
+      }
+      .wave-accent {
+        animation: waveDrift 8s ease-in-out infinite;
       }
     </style>
   </defs>
 
-  <rect class="card" x="1" y="1" width="878" height="208" rx="16"/>
+  <!-- Main vibrant waving canvas -->
+  <g clip-path="url(#heroWaveClip)">
+    <rect x="0" y="0" width="900" height="235" fill="url(#waveGrad1)"/>
+    <path class="wave-accent" d="M -30,122 C 165,68 365,175 565,112 C 725,62 845,128 940,92 L 940,235 L -30,235 Z" fill="url(#waveGrad2)"/>
+    <path d="M 0,158 C 210,200 435,122 665,162 C 785,184 855,152 900,142 L 900,235 L 0,235 Z" fill="#004D26" opacity="0.42"/>
+  </g>
+  <!-- Crisp luminous wave rim -->
+  <path d="M 0,204 C 108,176 245,232 420,192 C 585,154 745,232 900,184" fill="none" stroke="url(#waveRim)" stroke-width="1.5"/>
 
-  <!-- Subtle ambient glow behind character -->
-  <circle cx="735" cy="105" r="76" fill="url(#glow)"/>
+  <!-- Ambient glow centered behind flipped ninja -->
+  <circle cx="774" cy="102" r="80" fill="url(#ninjaGlow)"/>
 
-  <!-- Left: Clean typography -->
-  <g transform="translate(52, 58)">
-    <circle cx="5" cy="-4" r="4" fill="#00FF66"/>
-    <text x="18" y="0" class="tag">NUVENEQRA007</text>
+  <!-- Left: Human greeting + Hackbit-inspired Alexander López + crisp tagline -->
+  <text x="48" y="42" class="kicker">Hola 👋 soy</text>
 
-    <text x="0" y="48" class="name">Alexander López</text>
-    <text x="0" y="80" class="role">Full-Stack Developer · AppSec · 3D Web</text>
-    <text x="0" y="114" class="meta">República Dominicana</text>
+  <g transform="translate(48, 58) scale(0.56)" fill="url(#wordGrad)">
+    <path transform="translate(0,0)" fill-rule="evenodd" d="M22,0 L54,0 L74,96 L48,96 L44,74 L30,74 L26,96 L0,96 Z M34,26 L42,26 L44,52 L32,52 Z"/>
+    <path transform="translate(82,0)" fill-rule="evenodd" d="M2,0 L25,2 L23,96 L2,94 Z"/>
+    <path transform="translate(114,0)" fill-rule="evenodd" d="M6,24 L56,22 L62,62 L26,64 L26,74 L60,71 L58,94 L6,96 L2,62 Z M25,38 L41,38 L41,49 L25,49 Z"/>
+    <path transform="translate(182,0)" fill-rule="evenodd" d="M2,24 L26,22 L33,44 L42,22 L62,24 L46,58 L63,96 L40,96 L31,72 L21,96 L0,94 L18,58 Z"/>
+    <path transform="translate(250,0)" fill-rule="evenodd" d="M8,24 L56,22 L62,96 L4,96 L2,56 L38,52 L38,42 L8,44 Z M22,67 L38,66 L38,79 L22,79 Z"/>
+    <path transform="translate(318,0)" fill-rule="evenodd" d="M2,24 L24,22 L24,30 L56,23 L62,96 L38,96 L36,46 L24,48 L24,96 L2,96 Z"/>
+    <path transform="translate(386,0)" fill-rule="evenodd" d="M38,0 L62,2 L62,96 L6,96 L2,28 L38,24 Z M24,48 L38,47 L38,75 L24,75 Z"/>
+    <path transform="translate(456,0)" fill-rule="evenodd" d="M6,24 L56,22 L62,62 L26,64 L26,74 L60,71 L58,94 L6,96 L2,62 Z M25,38 L41,38 L41,49 L25,49 Z"/>
+    <path transform="translate(524,0)" fill-rule="evenodd" d="M2,24 L24,22 L24,32 L48,22 L46,48 L26,48 L24,96 L2,96 Z"/>
+    <path transform="translate(602,0)" fill-rule="evenodd" d="M2,0 L28,2 L26,72 L56,70 L54,96 L2,96 Z"/>
+    <path transform="translate(664,0)" fill-rule="evenodd" d="M6,24 L58,22 L64,94 L4,96 Z M24,45 L40,44 L42,74 L24,75 Z"/>
+    <path transform="translate(734,0)" fill-rule="evenodd" d="M2,24 L58,22 L62,92 L26,95 L26,112 L2,114 Z M25,44 L40,44 L40,72 L25,72 Z"/>
+    <path transform="translate(804,0)" fill-rule="evenodd" d="M6,24 L56,22 L62,62 L26,64 L26,74 L60,71 L58,94 L6,96 L2,62 Z M25,38 L41,38 L41,49 L25,49 Z"/>
+    <path transform="translate(872,0)" fill-rule="evenodd" d="M4,24 L56,22 L58,44 L32,74 L58,72 L56,96 L2,96 L0,74 L26,45 L4,46 Z"/>
+
+  <g transform="translate(686, -10)">
+    <path d="M6,0 L34,-4 L26,18 L0,20 Z" fill="#E85335"/>
+    <path d="M8,6 L28,3 M6,12 L25,9" stroke="#0D1510" stroke-width="2" stroke-linecap="round" opacity="0.65"/>
   </g>
 
-  <!-- Right: Floating pixel-art ninja -->
+  </g>
+
+  <text x="48" y="148" class="tagline">Construyendo en la web con seguridad y estilo.</text>
+  <text x="48" y="171" class="submeta">República Dominicana · Full-Stack, AppSec &amp; Web 3D</text>
+
+  <!-- Right: Floating pixel-art ninja FLIPPED to face left toward the name -->
   <g class="shadow-wrap">
-    <ellipse cx="735" cy="168" rx="34" ry="7" fill="#000000"/>
+    <ellipse cx="774" cy="164" rx="28" ry="5.5" fill="#000000"/>
   </g>
   <g class="ninja-wrap">
-    <image class="pixel" x="680" y="42" width="110" height="120" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEUAAABLCAYAAAAmh0pZAAAC2UlEQVR4AeyYwXXCMAyGRadgDLpBhugIPXaEHhmBY0dgCA4dgDE4dgNqP2I/4fxxbEfBJqgvahzZluTPEoa8kf4NCCiUARIihaJQAAGg0kxRKIAAUGmmKBRAAKg0UxQKIABUmikKBRAAKs0UhQIIANV6MwUsNlU1F8rVOJIWY7LuNRdK3egX8q5QAFgxKLvdjnaFAuKqqhKDUnUVws4VCgC6CJTz+UznDAFxVVUtAqXqigScKxQAUQzK5XIhJ9fjnrz8fNG1F+7f95uxXN9CWwxKC4uRikGhAJJzoWyMTSemebve90fycvil9174lzvfb8beZrXzfy6UdlYiGEnjUARXmmEqBiXrlYA7ecL7WCx83NiYWvoYlFoxVferUMAWhFB8yWy3WyoVXhpjv4H4mCAuH0Ogf9hjCOVhjlt2pFDA7lgoPl15ufD0zm0DP6UqH1upgZJ5FkrJvFXPUShge++g8DIBY6Oqruuo66Xl1wLRRfSdd1B63cvfFApIAQvF/fS3dzAkTXU6nejUS9qM7FH8JOLtbENTEyyUqTEv1/8IKE8HNYRiS8hJ+WL+LkROyq3czez6k83eg9NNvJRCKHeBvOqDQgE7H4PiysjewdRx1ebzQE7GR+X1uJPN3vNm5o+OQcm3tpIZCgVsZCoUW0JTAszPVnGf3tjm45uceKVgIxWKoMv2TSkUsEetQ+FfzHgpjbXBEvNVrUPJX5HADIUCIM6FwtMbmM9X8ZfnwWxxX4F9/zgXije0pkYylDUtemotJVAm0zhSApOnBn95HrEzGcPUwmP9JVBi9lbRp1DANopB4anOS8D45CVjHuEFx3A73D60IKgUgyIYU3VTCgVsQSoU+GnPU5qnuvEDy8Hox66l7Y/5hfpUKHDyWpUKBexsDMrSKb20fbDcNFUMSpqFFY5SKGBTs6HwU4afPsY2LAejz7qWtp8STDaUFKPPNWYYrUIZMqF/AAAA//+foXqxAAAABklEQVQDALrmkTgpmmpHAAAAAElFTkSuQmCC"/>
+    <g transform="translate(822, 42) scale(-1, 1)">
+      <image class="pixel" x="0" y="0" width="110" height="120" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEUAAABLCAYAAAAmh0pZAAAC2UlEQVR4AeyYwXXCMAyGRadgDLpBhugIPXaEHhmBY0dgCA4dgDE4dgNqP2I/4fxxbEfBJqgvahzZluTPEoa8kf4NCCiUARIihaJQAAGg0kxRKIAAUGmmKBRAAKg0UxQKIABUmikKBRAAKs0UhQIIANV6MwUsNlU1F8rVOJIWY7LuNRdK3egX8q5QAFgxKLvdjnaFAuKqqhKDUnUVws4VCgC6CJTz+UznDAFxVVUtAqXqigScKxQAUQzK5XIhJ9fjnrz8fNG1F+7f95uxXN9CWwxKC4uRikGhAJJzoWyMTSemebve90fycvil9174lzvfb8beZrXzfy6UdlYiGEnjUARXmmEqBiXrlYA7ecL7WCx83NiYWvoYlFoxVferUMAWhFB8yWy3WyoVXhpjv4H4mCAuH0Ogf9hjCOVhjlt2pFDA7lgoPl15ufD0zm0DP6UqH1upgZJ5FkrJvFXPUShge++g8DIBY6Oqruuo66Xl1wLRRfSdd1B63cvfFApIAQvF/fS3dzAkTXU6nejUS9qM7FH8JOLtbENTEyyUqTEv1/8IKE8HNYRiS8hJ+WL+LkROyq3czez6k83eg9NNvJRCKHeBvOqDQgE7H4PiysjewdRx1ebzQE7GR+X1uJPN3vNm5o+OQcm3tpIZCgVsZCoUW0JTAszPVnGf3tjm45uceKVgIxWKoMv2TSkUsEetQ+FfzHgpjbXBEvNVrUPJX5HADIUCIM6FwtMbmM9X8ZfnwWxxX4F9/zgXije0pkYylDUtemotJVAm0zhSApOnBn95HrEzGcPUwmP9JVBi9lbRp1DANopB4anOS8D45CVjHuEFx3A73D60IKgUgyIYU3VTCgVsQSoU+GnPU5qnuvEDy8Hox66l7Y/5hfpUKHDyWpUKBexsDMrSKb20fbDcNFUMSpqFFY5SKGBTs6HwU4afPsY2LAejz7qWtp8STDaUFKPPNWYYrUIZMqF/AAAA//+foXqxAAAABklEQVQDALrmkTgpmmpHAAAAAElFTkSuQmCC"/>
+    </g>
   </g>
 </svg>
