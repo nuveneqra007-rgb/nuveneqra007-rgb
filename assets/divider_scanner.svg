@@ -1,43 +1,51 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 28" width="900" height="28" role="img" aria-label="Minimal Cyber Divider">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 28" width="900" height="28" role="img" aria-label="Minimalist Cyber Divider">
   <defs>
-    <linearGradient id="minLaser" x1="0%" y1="0%" x2="100%" y2="0%">
+    <linearGradient id="laserMinC" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="#2ea043" stop-opacity="0"/>
-      <stop offset="18%" stop-color="#2ea043" stop-opacity="0.22"/>
-      <stop offset="44%" stop-color="#3fb950" stop-opacity="0.72"/>
-      <stop offset="48.4%" stop-color="#3fb950" stop-opacity="0.85"/>
-      <stop offset="48.5%" stop-color="#3fb950" stop-opacity="0"/>
-      <stop offset="51.5%" stop-color="#3fb950" stop-opacity="0"/>
-      <stop offset="51.6%" stop-color="#3fb950" stop-opacity="0.85"/>
-      <stop offset="56%" stop-color="#3fb950" stop-opacity="0.72"/>
-      <stop offset="82%" stop-color="#2ea043" stop-opacity="0.22"/>
+      <stop offset="16%" stop-color="#2ea043" stop-opacity="0.22"/>
+      <stop offset="42%" stop-color="#3fb950" stop-opacity="0.82"/>
+      <stop offset="48.5%" stop-color="#A8FFCB" stop-opacity="0.92"/>
+      <stop offset="49.2%" stop-color="#FFFFFF" stop-opacity="0"/>
+      <stop offset="50.8%" stop-color="#FFFFFF" stop-opacity="0"/>
+      <stop offset="51.5%" stop-color="#A8FFCB" stop-opacity="0.92"/>
+      <stop offset="58%" stop-color="#3fb950" stop-opacity="0.82"/>
+      <stop offset="84%" stop-color="#2ea043" stop-opacity="0.22"/>
       <stop offset="100%" stop-color="#2ea043" stop-opacity="0"/>
     </linearGradient>
 
-    <radialGradient id="minGlow" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#3fb950" stop-opacity="0.28"/>
+    <radialGradient id="auraMinC" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#3fb950" stop-opacity="0.26"/>
       <stop offset="100%" stop-color="#2ea043" stop-opacity="0"/>
     </radialGradient>
 
+    <filter id="glowMinC" x="-60%" y="-150%" width="220%" height="400%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1.4" result="b"/>
+      <feMerge>
+        <feMergeNode in="b"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
     <style>
-      @keyframes minPulse {
-        0%, 100% { opacity: 0.72; }
+      @keyframes gemBreath {
+        0%, 100% { opacity: 0.78; }
         50% { opacity: 1; }
       }
-      .center-gem {
-        animation: minPulse 3.6s ease-in-out infinite;
+      .min-gem {
+        animation: gemBreath 3.4s ease-in-out infinite;
       }
     </style>
   </defs>
 
-  <!-- Subtle soft glow at center -->
-  <circle cx="450" cy="14" r="16" fill="url(#minGlow)"/>
+  <!-- Soft localized center glow -->
+  <circle cx="450" cy="14" r="13" fill="url(#auraMinC)"/>
 
-  <!-- Single thin hairline fading line -->
-  <rect x="40" y="13.5" width="820" height="1" fill="url(#minLaser)"/>
+  <!-- Thin fading cyber-laser hairline -->
+  <rect x="40" y="13.4" width="820" height="1.2" fill="url(#laserMinC)" filter="url(#glowMinC)"/>
 
-  <!-- Minimalist center wireframe diamond -->
-  <g class="center-gem" fill="none" stroke-linecap="round" stroke-linejoin="round">
-    <polygon points="450,6.5 457.5,14 450,21.5 442.5,14" stroke="#3fb950" stroke-width="1.2"/>
-    <circle cx="450" cy="14" r="1.4" fill="#D8FFE6" stroke="none"/>
+  <!-- Small minimalist hollow geometric diamond (5.5px radius) -->
+  <g class="min-gem" filter="url(#glowMinC)" fill="none" stroke-linejoin="round" stroke-linecap="round">
+    <polygon points="450,8.5 455.5,14 450,19.5 444.5,14" stroke="#3fb950" stroke-width="1.15"/>
+    <polyline points="444.5,14 450,8.5 455.5,14" stroke="#E6FFF0" stroke-width="1.05"/>
   </g>
 </svg>
