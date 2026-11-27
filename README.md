@@ -1,6 +1,6 @@
 <div align="center">
 
-<!-- ── HERO MINIMALISTA: ALEXANDER + EMBLEMA APPSEC 3D ── -->
+<!-- ── HERO MINIMALISTA: ALEXANDER + DEV PROGRAMANDO EN PC ── -->
 <img src="assets/hero_minimal.svg" width="100%" alt="Alexander López — Full-Stack Developer & AppSec" />
 
 <br/>

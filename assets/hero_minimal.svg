@@ -20,33 +20,21 @@
       <stop offset="0%" stop-color="#8DF25A"/>
       <stop offset="100%" stop-color="#48D456"/>
     </linearGradient>
-    <radialGradient id="orbGlow" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#00FF80" stop-opacity="0.34"/>
-      <stop offset="45%" stop-color="#00E676" stop-opacity="0.16"/>
-      <stop offset="75%" stop-color="#006633" stop-opacity="0.06"/>
+    <radialGradient id="pcGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#00FF80" stop-opacity="0.30"/>
+      <stop offset="55%" stop-color="#00C853" stop-opacity="0.11"/>
       <stop offset="100%" stop-color="#004D26" stop-opacity="0"/>
     </radialGradient>
-    <radialGradient id="orbShellFill" cx="50%" cy="48%" r="54%">
-      <stop offset="0%" stop-color="#0A3B24" stop-opacity="0.45"/>
-      <stop offset="65%" stop-color="#052114" stop-opacity="0.62"/>
-      <stop offset="100%" stop-color="#00E676" stop-opacity="0.22"/>
-    </radialGradient>
-    <filter id="neonBloom" x="-45%" y="-45%" width="190%" height="190%">
-      <feGaussianBlur in="SourceGraphic" stdDeviation="2.4" result="blur"/>
+    <filter id="ledGlow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1.1" result="blur"/>
       <feMerge>
         <feMergeNode in="blur"/>
         <feMergeNode in="SourceGraphic"/>
       </feMerge>
     </filter>
-    <filter id="eyeBloom" x="-60%" y="-60%" width="220%" height="220%">
-      <feGaussianBlur in="SourceGraphic" stdDeviation="3.2" result="blur1"/>
-      <feGaussianBlur in="SourceGraphic" stdDeviation="1.1" result="blur2"/>
-      <feMerge>
-        <feMergeNode in="blur1"/>
-        <feMergeNode in="blur2"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
+    <clipPath id="monitorScreenClip">
+      <rect x="25" y="8" width="46" height="22"/>
+    </clipPath>
     <clipPath id="heroWaveClip">
       <path d="M 0,16 Q 0,0 16,0 L 884,0 Q 900,0 900,16 L 900,184 C 745,232 585,154 420,192 C 245,232 108,176 0,204 Z"/>
     </clipPath>
@@ -70,52 +58,62 @@
         font-size: 12.5px;
         fill: #96B3A2;
       }
-      @keyframes floatOrb {
-        0%, 100% { transform: translateY(0px); }
-        50% { transform: translateY(-7px); }
-      }
-      @keyframes shadowPulse {
-        0%, 100% { transform: scaleX(1); opacity: 0.45; }
-        50% { transform: scaleX(0.8); opacity: 0.2; }
-      }
-      @keyframes auraPulse {
-        0%, 100% { opacity: 0.8; transform: scale(1); }
-        50% { opacity: 1; transform: scale(1.06); }
-      }
-      @keyframes corePulse {
-        0%, 100% { opacity: 0.92; transform: scale(1); }
-        50% { opacity: 1; transform: scale(1.08); }
-      }
-      @keyframes nodeBlink {
-        0%, 100% { opacity: 0.22; transform: scale(0.75); }
-        45%, 55% { opacity: 1; transform: scale(1.25); }
-      }
       @keyframes waveDrift {
         0%, 100% { transform: translateX(0px); }
         50% { transform: translateX(-20px); }
       }
-      .orb-wrap {
-        animation: floatOrb 3.4s ease-in-out infinite;
+      @keyframes devBob {
+        0%, 49% { transform: translateY(0px); }
+        50%, 100% { transform: translateY(0.8px); }
       }
-      .orb-aura {
-        transform-origin: 765px 100px;
-        animation: auraPulse 3.4s ease-in-out infinite;
+      @keyframes tapL {
+        0%, 24% { transform: translateY(-1px); }
+        25%, 74% { transform: translateY(0px); }
+        75%, 100% { transform: translateY(-0.6px); }
       }
-      .shadow-wrap {
-        transform-origin: 765px 175px;
-        animation: shadowPulse 3.4s ease-in-out infinite;
+      @keyframes tapR {
+        0%, 24% { transform: translateY(0px); }
+        25%, 49% { transform: translateY(-1px); }
+        50%, 99% { transform: translateY(0px); }
+        100% { transform: translateY(-0.5px); }
       }
-      .eye-core {
-        transform-origin: 0px 0px;
-        animation: corePulse 2.6s ease-in-out infinite;
+      @keyframes shoulderL {
+        0%, 24% { transform: translateY(-0.6px); }
+        25%, 100% { transform: translateY(0px); }
       }
-      .node-a { animation: nodeBlink 2.2s ease-in-out infinite; }
-      .node-b { animation: nodeBlink 2.2s ease-in-out 0.7s infinite; }
-      .node-c { animation: nodeBlink 2.2s ease-in-out 1.4s infinite; }
-      .node-d { animation: nodeBlink 2.6s ease-in-out 0.35s infinite; }
-      .wave-accent {
-        animation: waveDrift 8s ease-in-out infinite;
+      @keyframes shoulderR {
+        0%, 49% { transform: translateY(0px); }
+        50%, 74% { transform: translateY(-0.6px); }
+        75%, 100% { transform: translateY(0px); }
       }
+      @keyframes codeScroll {
+        0% { transform: translateY(0px); }
+        100% { transform: translateY(-12px); }
+      }
+      @keyframes cursorBlink {
+        0%, 49% { opacity: 1; }
+        50%, 100% { opacity: 0; }
+      }
+      @keyframes ledPulse {
+        0%, 100% { opacity: 0.55; }
+        50% { opacity: 1; }
+      }
+      @keyframes steamRise {
+        0% { transform: translateY(0px); opacity: 0; }
+        30% { opacity: 0.85; }
+        100% { transform: translateY(-5px); opacity: 0; }
+      }
+      .wave-accent { animation: waveDrift 8s ease-in-out infinite; }
+      .dev-bob { animation: devBob 1.1s steps(2, end) infinite; }
+      .tap-l { animation: tapL 0.48s steps(2, end) infinite; }
+      .tap-r { animation: tapR 0.48s steps(2, end) infinite; }
+      .sh-l { animation: shoulderL 0.96s steps(2, end) infinite; }
+      .sh-r { animation: shoulderR 0.96s steps(2, end) infinite; }
+      .code-flow { animation: codeScroll 3.2s steps(6, end) infinite; }
+      .cursor-blink { animation: cursorBlink 0.9s steps(2, end) infinite; }
+      .led-pulse { animation: ledPulse 2.4s ease-in-out infinite; }
+      .steam-1 { animation: steamRise 1.8s ease-out infinite; }
+      .steam-2 { animation: steamRise 1.8s ease-out 0.9s infinite; }
     </style>
   </defs>
 
@@ -128,10 +126,8 @@
   <!-- Crisp luminous wave rim -->
   <path d="M 0,204 C 108,176 245,232 420,192 C 585,154 745,232 900,184" fill="none" stroke="url(#waveRim)" stroke-width="1.5"/>
 
-  <!-- Volumetric glow centered behind the AppSec 3D orb -->
-  <g class="orb-aura">
-    <circle cx="765" cy="100" r="88" fill="url(#orbGlow)"/>
-  </g>
+  <!-- Ambient monitor glow behind isolated developer & PC setup -->
+  <ellipse cx="758" cy="88" rx="96" ry="62" fill="url(#pcGlow)"/>
 
   <!-- Left: Human greeting + Hackbit-inspired Alexander López + crisp tagline -->
   <text x="48" y="42" class="kicker">Hola 👋 soy</text>
@@ -162,72 +158,128 @@
   <text x="48" y="148" class="tagline">Construyendo en la web con seguridad y estilo.</text>
   <text x="48" y="171" class="submeta">República Dominicana · Full-Stack, AppSec &amp; Web 3D</text>
 
-  <!-- Right: Floating AppSec 3D Polygonal Orb with Scanner Eye & Orbital Nodes -->
-  <g class="shadow-wrap">
-    <ellipse cx="765" cy="175" rx="34" ry="5.5" fill="#001A0D"/>
-  </g>
-  <g class="orb-wrap">
-    <g transform="translate(765, 100)">
-      <!-- Back orbital arcs (behind orb shell) -->
-      <g transform="rotate(-20)" fill="none" stroke="#2BFF88" stroke-width="0.95" stroke-opacity="0.45">
-        <path d="M -86,0 A 86,24 0 0,1 86,0"/>
-      </g>
-      <g transform="rotate(20)" fill="none" stroke="#2BFF88" stroke-width="0.95" stroke-opacity="0.45">
-        <path d="M -86,0 A 86,24 0 0,1 86,0"/>
-      </g>
+  <!-- Right: Isolated Transparent Rear-View Seated Developer Coding on PC (No Room BG, No Laptop) -->
+  <ellipse cx="758" cy="175" rx="74" ry="6.5" fill="#001209" opacity="0.52"/>
+  <g transform="translate(660, 36) scale(2.05)" shape-rendering="crispEdges">
+    <!-- Static PC desk, monitor bezel, chair base, keyboard, mug & tower -->
+    <g>
+      <path fill="#08120c" d="M7,44h24v1h-24zM36,44h25v1h-25zM66,44h23v1h-23z"/>
+      <path fill="#162e21" d="M10,45h2v1h-2zM84,45h2v1h-2zM10,46h2v1h-2zM84,46h2v1h-2zM10,47h2v1h-2zM84,47h2v1h-2zM10,48h2v1h-2zM84,48h2v1h-2zM10,49h2v1h-2zM84,49h2v1h-2zM10,50h2v1h-2zM84,50h2v1h-2zM10,51h2v1h-2zM84,51h2v1h-2zM10,52h2v1h-2zM84,52h2v1h-2zM10,53h2v1h-2zM84,53h2v1h-2zM10,54h2v1h-2zM84,54h2v1h-2zM10,55h2v1h-2zM84,55h2v1h-2zM10,56h2v1h-2zM84,56h2v1h-2zM10,57h2v1h-2zM84,57h2v1h-2zM10,58h2v1h-2zM84,58h2v1h-2zM10,59h2v1h-2zM84,59h2v1h-2zM10,60h2v1h-2zM84,60h2v1h-2zM10,61h2v1h-2zM84,61h2v1h-2zM10,62h2v1h-2zM84,62h2v1h-2zM10,63h2v1h-2zM84,63h2v1h-2zM10,64h2v1h-2zM84,64h2v1h-2z"/>
+      <path fill="#2c5c40" d="M7,36h6v1h-6zM19,36h20v1h-20zM58,36h18v1h-18zM86,36h3v1h-3z"/>
+      <path fill="#96c3aa" d="M12,33h1v1h-1zM12,34h7v1h-7zM13,35h6v1h-6zM13,36h6v1h-6zM13,37h6v1h-6z"/>
+      <path fill="#384852" d="M39,36h19v1h-19z"/>
+      <path fill="#16201e" d="M76,21h10v1h-10zM76,22h1v1h-1zM85,22h1v1h-1zM76,23h1v1h-1zM85,23h1v1h-1zM76,24h1v1h-1zM85,24h1v1h-1zM76,25h1v1h-1zM85,25h1v1h-1zM76,26h1v1h-1zM85,26h1v1h-1zM76,27h1v1h-1zM85,27h1v1h-1zM76,28h1v1h-1zM85,28h1v1h-1zM76,29h1v1h-1zM85,29h1v1h-1zM76,30h1v1h-1zM85,30h1v1h-1zM76,31h1v1h-1zM85,31h1v1h-1zM76,32h1v1h-1zM85,32h1v1h-1zM76,33h1v1h-1zM85,33h1v1h-1zM76,34h1v1h-1zM85,34h1v1h-1zM76,35h1v1h-1zM85,35h1v1h-1zM76,36h1v1h-1zM85,36h1v1h-1zM76,37h1v1h-1zM85,37h1v1h-1zM76,38h10v1h-10z"/>
+      <path fill="#222e34" d="M77,22h8v1h-8zM77,23h8v1h-8zM77,24h8v1h-8zM77,25h8v1h-8zM77,26h8v1h-8zM77,27h8v1h-8zM77,28h8v1h-8zM77,29h8v1h-8zM77,30h8v1h-8zM77,31h8v1h-8zM77,32h8v1h-8zM77,33h8v1h-8zM77,34h8v1h-8zM77,35h8v1h-8zM77,36h8v1h-8zM77,37h8v1h-8z"/>
+      <path fill="#183425" d="M7,37h6v1h-6zM19,37h14v1h-14zM64,37h12v1h-12zM86,37h3v1h-3zM7,38h26v1h-26zM64,38h2v1h-2zM71,38h5v1h-5zM86,38h3v1h-3zM7,39h26v1h-26zM64,39h2v1h-2zM71,39h18v1h-18zM7,40h26v1h-26zM64,40h2v1h-2zM71,40h18v1h-18z"/>
+      <path fill="#121a18" d="M33,37h31v1h-31zM33,38h1v1h-1zM63,38h1v1h-1zM38,39h21v1h-21zM38,40h21v1h-21z"/>
+      <path fill="#080808" d="M34,38h1v1h-1zM38,38h1v1h-1zM58,38h1v1h-1zM62,38h1v1h-1zM33,39h1v1h-1zM37,39h1v1h-1zM59,39h1v1h-1zM63,39h1v1h-1zM33,40h1v1h-1zM37,40h1v1h-1zM59,40h1v1h-1zM63,40h1v1h-1zM32,41h1v1h-1zM36,41h1v1h-1zM60,41h1v1h-1zM64,41h1v1h-1zM32,42h1v1h-1zM36,42h1v1h-1zM60,42h1v1h-1zM64,42h1v1h-1zM31,43h1v1h-1zM35,43h1v1h-1zM61,43h1v1h-1zM65,43h1v1h-1zM31,44h1v1h-1zM35,44h1v1h-1zM61,44h1v1h-1zM65,44h1v1h-1zM30,45h1v1h-1zM34,45h1v1h-1zM62,45h1v1h-1zM66,45h1v1h-1zM34,61h9v1h-9zM54,61h9v1h-9zM34,62h1v1h-1zM41,62h1v1h-1zM55,62h1v1h-1zM62,62h1v1h-1zM34,63h1v1h-1zM41,63h1v1h-1zM55,63h1v1h-1zM62,63h1v1h-1zM34,64h1v1h-1zM41,64h1v1h-1zM55,64h1v1h-1zM62,64h1v1h-1zM34,65h8v1h-8zM55,65h8v1h-8z"/>
+      <path fill="#2a4266" d="M35,38h3v1h-3zM59,38h3v1h-3zM34,39h3v1h-3zM60,39h3v1h-3zM34,40h3v1h-3zM60,40h3v1h-3zM33,41h3v1h-3zM61,41h3v1h-3zM33,42h3v1h-3zM61,42h3v1h-3zM32,43h3v1h-3zM62,43h3v1h-3zM32,44h3v1h-3zM62,44h3v1h-3zM31,45h3v1h-3zM63,45h3v1h-3z"/>
+      <path fill="#375546" d="M39,38h1v1h-1zM41,38h1v1h-1zM43,38h1v1h-1zM45,38h1v1h-1zM47,38h1v1h-1zM49,38h1v1h-1zM51,38h1v1h-1zM53,38h1v1h-1zM55,38h1v1h-1zM57,38h1v1h-1z"/>
+      <path fill="#6e9b82" d="M40,38h1v1h-1zM42,38h1v1h-1zM44,38h1v1h-1zM46,38h1v1h-1zM48,38h1v1h-1zM50,38h1v1h-1zM52,38h1v1h-1zM54,38h1v1h-1zM56,38h1v1h-1z"/>
+      <path fill="#30423a" d="M66,38h2v1h-2zM69,38h2v1h-2zM66,39h5v1h-5zM66,40h5v1h-5z"/>
+      <path fill="#3fb950" d="M68,38h1v1h-1z"/>
+      <path fill="#265238" d="M7,41h25v1h-25zM37,41h23v1h-23zM65,41h24v1h-24z"/>
+      <path fill="#142a1e" d="M7,42h25v1h-25zM37,42h23v1h-23zM65,42h24v1h-24z"/>
+      <path fill="#00eb73" d="M7,43h24v1h-24zM36,43h25v1h-25zM66,43h23v1h-23z"/>
+      <path fill="#2c3a44" d="M23,6h51v1h-51zM23,7h1v1h-1zM73,7h1v1h-1zM23,8h1v1h-1zM73,8h1v1h-1zM23,9h1v1h-1zM73,9h1v1h-1zM23,10h1v1h-1zM73,10h1v1h-1zM23,11h1v1h-1zM73,11h1v1h-1zM23,12h1v1h-1zM73,12h1v1h-1zM23,13h1v1h-1zM73,13h1v1h-1zM23,14h1v1h-1zM73,14h1v1h-1zM23,15h1v1h-1zM73,15h1v1h-1zM23,16h1v1h-1zM73,16h1v1h-1zM23,17h1v1h-1zM73,17h1v1h-1zM23,18h1v1h-1zM73,18h1v1h-1zM23,19h1v1h-1zM73,19h1v1h-1zM23,20h1v1h-1zM73,20h1v1h-1zM23,21h1v1h-1zM73,21h1v1h-1zM23,22h1v1h-1zM73,22h1v1h-1zM23,23h1v1h-1zM73,23h1v1h-1zM23,24h1v1h-1zM73,24h1v1h-1zM23,25h1v1h-1zM73,25h1v1h-1zM23,26h1v1h-1zM73,26h1v1h-1zM23,27h1v1h-1zM73,27h1v1h-1zM23,28h1v1h-1zM73,28h1v1h-1zM23,29h1v1h-1zM73,29h1v1h-1zM23,30h1v1h-1zM73,30h1v1h-1zM23,31h1v1h-1zM73,31h1v1h-1zM23,32h51v1h-51z"/>
+      <path fill="#2a363e" d="M45,33h7v1h-7zM45,34h7v1h-7zM45,35h7v1h-7z"/>
+      <path fill="#0e1614" d="M24,7h49v1h-49zM24,8h1v1h-1zM72,8h1v1h-1zM24,9h1v1h-1zM72,9h1v1h-1zM24,10h1v1h-1zM72,10h1v1h-1zM24,11h1v1h-1zM72,11h1v1h-1zM24,12h1v1h-1zM72,12h1v1h-1zM24,13h1v1h-1zM72,13h1v1h-1zM24,14h1v1h-1zM72,14h1v1h-1zM24,15h1v1h-1zM72,15h1v1h-1zM24,16h1v1h-1zM72,16h1v1h-1zM24,17h1v1h-1zM72,17h1v1h-1zM24,18h1v1h-1zM72,18h1v1h-1zM24,19h1v1h-1zM72,19h1v1h-1zM24,20h1v1h-1zM72,20h1v1h-1zM24,21h1v1h-1zM72,21h1v1h-1zM24,22h1v1h-1zM72,22h1v1h-1zM24,23h1v1h-1zM72,23h1v1h-1zM24,24h1v1h-1zM72,24h1v1h-1zM24,25h1v1h-1zM72,25h1v1h-1zM24,26h1v1h-1zM72,26h1v1h-1zM24,27h1v1h-1zM72,27h1v1h-1zM24,28h1v1h-1zM72,28h1v1h-1zM24,29h1v1h-1zM72,29h1v1h-1zM24,30h1v1h-1zM72,30h1v1h-1zM24,31h49v1h-49z"/>
+      <path fill="#05120b" d="M25,8h47v1h-47zM25,9h26v1h-26zM52,9h20v1h-20zM25,10h26v1h-26zM52,10h20v1h-20zM25,11h26v1h-26zM52,11h20v1h-20zM25,12h26v1h-26zM52,12h20v1h-20zM25,13h26v1h-26zM52,13h20v1h-20zM25,14h26v1h-26zM52,14h20v1h-20zM25,15h26v1h-26zM52,15h20v1h-20zM25,16h26v1h-26zM52,16h20v1h-20zM25,17h26v1h-26zM52,17h20v1h-20zM25,18h26v1h-26zM52,18h20v1h-20zM25,19h26v1h-26zM52,19h20v1h-20zM25,20h26v1h-26zM52,20h20v1h-20zM25,21h26v1h-26zM52,21h20v1h-20zM25,22h26v1h-26zM52,22h20v1h-20zM25,23h26v1h-26zM52,23h20v1h-20zM25,24h26v1h-26zM52,24h20v1h-20zM25,25h26v1h-26zM52,25h20v1h-20zM25,26h26v1h-26zM52,26h20v1h-20zM25,27h26v1h-26zM52,27h20v1h-20zM25,28h26v1h-26zM52,28h20v1h-20zM25,29h26v1h-26zM52,29h20v1h-20zM25,30h47v1h-47z"/>
+      <path fill="#10301e" d="M51,9h1v1h-1zM51,10h1v1h-1zM51,11h1v1h-1zM51,12h1v1h-1zM51,13h1v1h-1zM51,14h1v1h-1zM51,15h1v1h-1zM51,16h1v1h-1zM51,17h1v1h-1zM51,18h1v1h-1zM51,19h1v1h-1zM51,20h1v1h-1zM51,21h1v1h-1zM51,22h1v1h-1zM51,23h1v1h-1zM51,24h1v1h-1zM51,25h1v1h-1zM51,26h1v1h-1zM51,27h1v1h-1zM51,28h1v1h-1zM51,29h1v1h-1z"/>
+      <path fill="#d7f0e1" d="M13,32h6v1h-6zM13,33h6v1h-6z"/>
+      <path fill="#222a2e" d="M36,52h1v1h-1zM60,52h1v1h-1zM36,53h1v1h-1zM60,53h1v1h-1zM36,54h1v1h-1zM38,54h21v1h-21zM60,54h1v1h-1zM36,55h1v1h-1zM38,55h21v1h-21zM60,55h1v1h-1zM36,56h1v1h-1zM38,56h21v1h-21zM60,56h1v1h-1zM36,57h1v1h-1zM38,57h21v1h-21zM60,57h1v1h-1zM36,58h1v1h-1zM38,58h21v1h-21zM60,58h1v1h-1zM36,59h25v1h-25z"/>
+      <path fill="#0a0e0c" d="M28,48h5v1h-5zM64,48h5v1h-5zM28,49h1v1h-1zM32,49h1v1h-1zM64,49h1v1h-1zM68,49h1v1h-1zM28,50h1v1h-1zM32,50h1v1h-1zM64,50h1v1h-1zM68,50h1v1h-1zM28,51h1v1h-1zM31,51h2v1h-2zM35,51h27v1h-27zM64,51h1v1h-1zM67,51h2v1h-2zM35,52h1v1h-1zM61,52h1v1h-1zM35,53h1v1h-1zM61,53h1v1h-1zM35,54h1v1h-1zM61,54h1v1h-1zM35,55h1v1h-1zM61,55h1v1h-1zM35,56h1v1h-1zM61,56h1v1h-1zM35,57h1v1h-1zM61,57h1v1h-1zM35,58h1v1h-1zM61,58h1v1h-1zM35,59h1v1h-1zM61,59h1v1h-1zM35,60h27v1h-27z"/>
+      <path fill="#1e2428" d="M46,61h1v1h-1zM50,61h1v1h-1zM46,62h1v1h-1zM50,62h1v1h-1zM46,63h1v1h-1zM50,63h1v1h-1zM46,64h1v1h-1zM50,64h1v1h-1z"/>
+      <path fill="#343e44" d="M47,61h3v1h-3zM47,62h3v1h-3zM47,63h3v1h-3zM47,64h3v1h-3z"/>
+      <path fill="#283036" d="M32,65h2v1h-2zM42,65h13v1h-13zM63,65h2v1h-2z"/>
+      <path fill="#0e1214" d="M32,66h33v1h-33z"/>
+      <path fill="#0a0c0e" d="M31,67h2v1h-2zM47,67h2v1h-2zM64,67h2v1h-2z"/>
+      <path fill="#1e262a" d="M31,68h2v1h-2zM47,68h2v1h-2zM64,68h2v1h-2z"/>
+      <path fill="#443634" d="M35,62h6v1h-6zM56,62h6v1h-6zM35,63h6v1h-6zM56,63h6v1h-6z"/>
+      <path fill="#dce2e4" d="M35,64h6v1h-6zM56,64h6v1h-6z"/>
+      <path fill="#2e9b54" d="M37,52h23v1h-23z"/>
+      <path fill="#2e3c42" d="M37,53h23v1h-23z"/>
+      <path fill="#2e8c4e" d="M37,54h1v1h-1zM59,54h1v1h-1zM37,55h1v1h-1zM59,55h1v1h-1zM37,56h1v1h-1zM59,56h1v1h-1zM37,57h1v1h-1zM59,57h1v1h-1zM37,58h1v1h-1zM59,58h1v1h-1z"/>
+      <path fill="#303a40" d="M29,49h3v1h-3zM65,49h3v1h-3zM29,50h3v1h-3zM65,50h3v1h-3z"/>
+      <path fill="#1a2024" d="M29,51h2v1h-2zM65,51h2v1h-2zM29,52h2v1h-2zM65,52h2v1h-2zM29,53h2v1h-2zM65,53h2v1h-2zM29,54h2v1h-2zM65,54h2v1h-2zM29,55h2v1h-2zM65,55h2v1h-2zM29,56h2v1h-2zM65,56h2v1h-2zM29,57h2v1h-2zM65,57h2v1h-2z"/>
+    </g>
 
-      <!-- Translucent polygonal sphere shell -->
-      <polygon points="0.0,-60.0 30.0,-51.96 51.96,-30.0 60.0,0.0 51.96,30.0 30.0,51.96 0.0,60.0 -30.0,51.96 -51.96,30.0 -60.0,0.0 -51.96,-30.0 -30.0,-51.96" fill="url(#orbShellFill)"/>
+    <!-- Animated Neon Desk LED glow accent & PC Tower RGB bar -->
+    <rect x="7" y="43" width="82" height="1" fill="#00FF7B" filter="url(#ledGlow)" opacity="0.55"/>
+    <rect x="78" y="24" width="1" height="11" fill="#00FF7B" class="led-pulse" filter="url(#ledGlow)"/>
 
-      <!-- Back-hemisphere ghost wireframe for 3D depth -->
-      <path d="M0.0,-45.5 L22.75,39.4 M0.0,-36.5 L51.96,-30.0 M22.75,-39.4 L0.0,45.5 M18.25,-31.61 L60.0,0.0 M39.4,-22.75 L-22.75,39.4 M31.61,-18.25 L51.96,30.0 M45.5,0.0 L-39.4,22.75 M36.5,0.0 L30.0,51.96 M39.4,22.75 L-45.5,0.0 M31.61,18.25 L0.0,60.0 M22.75,39.4 L-39.4,-22.75 M18.25,31.61 L-30.0,51.96 M0.0,45.5 L-22.75,-39.4 M0.0,36.5 L-51.96,30.0 M-22.75,39.4 L0.0,-45.5 M-18.25,31.61 L-60.0,0.0 M-39.4,22.75 L22.75,-39.4 M-31.61,18.25 L-51.96,-30.0 M-45.5,0.0 L39.4,-22.75 M-36.5,0.0 L-30.0,-51.96 M-39.4,-22.75 L45.5,0.0 M-31.61,-18.25 L0.0,-60.0 M-22.75,-39.4 L39.4,22.75 M-18.25,-31.61 L30.0,-51.96" fill="none" stroke="#00FF80" stroke-width="0.65" stroke-opacity="0.22"/>
-
-      <!-- Main neon green geodesic wireframe mesh -->
-      <g filter="url(#neonBloom)">
-        <path d="M0.0,-60.0 L30.0,-51.96 M0.0,-45.5 L22.75,-39.4 M0.0,-60.0 L22.75,-39.4 M0.0,-60.0 L-22.75,-39.4 M0.0,-60.0 L0.0,-45.5 M0.0,-45.5 L0.0,-36.5 M0.0,-36.5 L0.0,-22.0 M0.0,-22.0 L13.0,-19.05 M30.0,-51.96 L51.96,-30.0 M22.75,-39.4 L39.4,-22.75 M30.0,-51.96 L22.75,-39.4 M22.75,-39.4 L18.25,-31.61 M22.75,-39.4 L31.61,-18.25 M22.75,-39.4 L0.0,-36.5 M18.25,-31.61 L13.0,-19.05 M13.0,-19.05 L22.52,-11.0 M51.96,-30.0 L60.0,0.0 M39.4,-22.75 L45.5,0.0 M51.96,-30.0 L45.5,0.0 M51.96,-30.0 L22.75,-39.4 M51.96,-30.0 L39.4,-22.75 M39.4,-22.75 L31.61,-18.25 M31.61,-18.25 L22.52,-11.0 M22.52,-11.0 L26.0,0.0 M60.0,0.0 L51.96,30.0 M45.5,0.0 L39.4,22.75 M60.0,0.0 L45.5,0.0 M45.5,0.0 L36.5,0.0 M45.5,0.0 L31.61,18.25 M45.5,0.0 L31.61,-18.25 M36.5,0.0 L26.0,0.0 M26.0,0.0 L22.52,11.0 M51.96,30.0 L30.0,51.96 M39.4,22.75 L22.75,39.4 M51.96,30.0 L22.75,39.4 M51.96,30.0 L45.5,0.0 M51.96,30.0 L39.4,22.75 M39.4,22.75 L31.61,18.25 M31.61,18.25 L22.52,11.0 M22.52,11.0 L13.0,19.05 M30.0,51.96 L0.0,60.0 M22.75,39.4 L0.0,45.5 M30.0,51.96 L22.75,39.4 M22.75,39.4 L18.25,31.61 M22.75,39.4 L0.0,36.5 M22.75,39.4 L31.61,18.25 M18.25,31.61 L13.0,19.05 M13.0,19.05 L0.0,22.0 M0.0,60.0 L-30.0,51.96 M0.0,45.5 L-22.75,39.4 M0.0,60.0 L-22.75,39.4 M0.0,60.0 L22.75,39.4 M0.0,60.0 L0.0,45.5 M0.0,45.5 L0.0,36.5 M0.0,36.5 L0.0,22.0 M0.0,22.0 L-13.0,19.05 M-30.0,51.96 L-51.96,30.0 M-22.75,39.4 L-39.4,22.75 M-30.0,51.96 L-22.75,39.4 M-22.75,39.4 L-18.25,31.61 M-22.75,39.4 L-31.61,18.25 M-22.75,39.4 L0.0,36.5 M-18.25,31.61 L-13.0,19.05 M-13.0,19.05 L-22.52,11.0 M-51.96,30.0 L-60.0,0.0 M-39.4,22.75 L-45.5,0.0 M-51.96,30.0 L-45.5,0.0 M-51.96,30.0 L-22.75,39.4 M-51.96,30.0 L-39.4,22.75 M-39.4,22.75 L-31.61,18.25 M-31.61,18.25 L-22.52,11.0 M-22.52,11.0 L-26.0,0.0 M-60.0,0.0 L-51.96,-30.0 M-45.5,0.0 L-39.4,-22.75 M-60.0,0.0 L-45.5,0.0 M-45.5,0.0 L-36.5,0.0 M-45.5,0.0 L-31.61,-18.25 M-45.5,0.0 L-31.61,18.25 M-36.5,0.0 L-26.0,0.0 M-26.0,0.0 L-22.52,-11.0 M-51.96,-30.0 L-30.0,-51.96 M-39.4,-22.75 L-22.75,-39.4 M-51.96,-30.0 L-22.75,-39.4 M-51.96,-30.0 L-45.5,0.0 M-51.96,-30.0 L-39.4,-22.75 M-39.4,-22.75 L-31.61,-18.25 M-31.61,-18.25 L-22.52,-11.0 M-22.52,-11.0 L-13.0,-19.05 M-30.0,-51.96 L0.0,-60.0 M-22.75,-39.4 L0.0,-45.5 M-30.0,-51.96 L-22.75,-39.4 M-22.75,-39.4 L-18.25,-31.61 M-22.75,-39.4 L0.0,-36.5 M-22.75,-39.4 L-31.61,-18.25 M-18.25,-31.61 L-13.0,-19.05 M-13.0,-19.05 L0.0,-22.0 M0.0,-60.0 L0.0,-22.0 M0.0,22.0 L0.0,60.0 M60.0,0.0 L26.0,0.0 M-26.0,0.0 L-60.0,0.0" fill="none" stroke="#1BFF85" stroke-width="1.2" stroke-linejoin="round" stroke-linecap="round"/>
-        <!-- Highlighted inner mint-white ring -->
-        <path d="M0.0,-36.5 L18.25,-31.61 L31.61,-18.25 L36.5,0.0 L31.61,18.25 L18.25,31.61 L0.0,36.5 L-18.25,31.61 L-31.61,18.25 L-36.5,0.0 L-31.61,-18.25 L-18.25,-31.61 Z" fill="none" stroke="#C8FFE0" stroke-width="1.05" stroke-opacity="0.88" stroke-linejoin="round"/>
+    <!-- Animated Scrolling Green Code inside PC Monitor -->
+    <g clip-path="url(#monitorScreenClip)">
+      <g class="code-flow">
+        <!-- Left code pane -->
+        <rect x="27" y="10" width="10" height="1" fill="#3fb950"/>
+        <rect x="29" y="13" width="16" height="1" fill="#8EFFB5"/>
+        <rect x="27" y="16" width="8" height="1" fill="#2ea043"/>
+        <rect x="30" y="19" width="14" height="1" fill="#3fb950"/>
+        <rect x="27" y="22" width="18" height="1" fill="#B8FFD4"/>
+        <rect x="29" y="25" width="11" height="1" fill="#2ea043"/>
+        <rect x="27" y="28" width="15" height="1" fill="#3fb950"/>
+        <rect x="29" y="31" width="12" height="1" fill="#8EFFB5"/>
+        <rect x="27" y="34" width="9" height="1" fill="#2ea043"/>
+        <rect x="30" y="37" width="14" height="1" fill="#3fb950"/>
+        <!-- Right code pane -->
+        <rect x="53" y="10" width="9" height="1" fill="#3fb950"/>
+        <rect x="54" y="13" width="13" height="1" fill="#8EFFB5"/>
+        <rect x="53" y="16" width="7" height="1" fill="#2ea043"/>
+        <rect x="55" y="19" width="11" height="1" fill="#B8FFD4"/>
+        <rect x="53" y="22" width="14" height="1" fill="#3fb950"/>
+        <rect x="54" y="25" width="10" height="1" fill="#2ea043"/>
+        <rect x="53" y="28" width="12" height="1" fill="#8EFFB5"/>
+        <rect x="55" y="31" width="9" height="1" fill="#3fb950"/>
+        <rect x="53" y="34" width="13" height="1" fill="#B8FFD4"/>
+        <rect x="54" y="37" width="8" height="1" fill="#2ea043"/>
       </g>
+      <rect x="64" y="19" width="2" height="1" fill="#FFFFFF" class="cursor-blink"/>
+    </g>
 
-      <!-- Tiny suspended scanner particles inside orb -->
-      <g transform="translate(-18, -14)"><circle r="1.2" fill="#FFFFFF" class="node-b"/></g>
-      <g transform="translate(20, -16)"><circle r="1.3" fill="#FFFFFF" class="node-c"/></g>
-      <g transform="translate(9, 24)"><circle r="1.1" fill="#A7FFCB" class="node-a"/></g>
+    <!-- Rising Coffee Steam -->
+    <rect x="14" y="30" width="1" height="1" fill="#C8FFE0" class="steam-1"/>
+    <rect x="16" y="29" width="1" height="1" fill="#8EFFB5" class="steam-2"/>
 
-      <!-- Bright white geometric scanner eye in core -->
-      <g filter="url(#eyeBloom)">
-        <g class="eye-core" fill="none" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round">
-          <!-- Almond eye silhouette -->
-          <path d="M -23,0 Q 0,-19 23,0 Q 0,19 -23,0 Z" stroke-width="2.1"/>
-          <!-- Crosshairs -->
-          <line x1="-21" y1="0" x2="21" y2="0" stroke-width="1.25"/>
-          <line x1="0" y1="-12.5" x2="0" y2="12.5" stroke-width="1.25"/>
-          <!-- Outer & segmented HUD iris rings -->
-          <circle cx="0" cy="0" r="11.2" stroke-width="1.35"/>
-          <path d="M -6.2,-4.5 A 7.6,7.6 0 0,1 -4.5,-6.2 M 4.5,-6.2 A 7.6,7.6 0 0,1 6.2,-4.5 M 6.2,4.5 A 7.6,7.6 0 0,1 4.5,6.2 M -4.5,6.2 A 7.6,7.6 0 0,1 -6.2,4.5" stroke-width="1.2"/>
-          <!-- Luminous pupil core -->
-          <polygon points="0,-4.5 4.5,0 0,4.5 -4.5,0" fill="#FFFFFF" stroke="none"/>
-          <circle cx="0" cy="0" r="3" fill="#FFFFFF" stroke="none"/>
-        </g>
-      </g>
+    <!-- Animated Typing Hands -->
+    <g class="tap-l">
+      <path fill="#080808" d="M35,37h6v1h-6zM35,38h1v1h-1zM40,38h1v1h-1zM35,39h1v1h-1zM40,39h1v1h-1z"/>
+      <path fill="#ee8a50" d="M36,38h4v1h-4zM36,39h4v1h-4z"/>
+    </g>
+    <g class="tap-r">
+      <path fill="#080808" d="M56,37h6v1h-6zM56,38h1v1h-1zM61,38h1v1h-1zM56,39h1v1h-1zM61,39h1v1h-1z"/>
+      <path fill="#ee8a50" d="M57,38h4v1h-4zM57,39h4v1h-4z"/>
+    </g>
 
-      <!-- Front orbital arcs & intermittent blinking orbital nodes -->
-      <g transform="rotate(-20)">
-        <path d="M -86,0 A 86,24 0 0,0 86,0" fill="none" stroke="#3BFF95" stroke-width="1.1" stroke-opacity="0.78"/>
-        <g transform="translate(-77.94, -10.14)"><circle r="2.3" fill="#FFFFFF" filter="url(#neonBloom)" class="node-a"/></g>
-        <g transform="translate(-83.07, 6.21)"><circle r="1.9" fill="#00FF80" filter="url(#neonBloom)" class="node-b"/></g>
-        <g transform="translate(-65.88, 15.43)"><circle r="2.1" fill="#FFFFFF" filter="url(#neonBloom)" class="node-c"/></g>
-        <g transform="translate(70.45, -13.77)"><circle r="2.2" fill="#00FF80" filter="url(#neonBloom)" class="node-d"/></g>
-        <g transform="translate(80.81, 8.21)"><circle r="2.2" fill="#FFFFFF" filter="url(#neonBloom)" class="node-a"/></g>
-      </g>
-      <g transform="rotate(20)">
-        <path d="M -86,0 A 86,24 0 0,0 86,0" fill="none" stroke="#3BFF95" stroke-width="1.1" stroke-opacity="0.78"/>
-        <g transform="translate(-77.94, -10.14)"><circle r="2.0" fill="#00FF80" filter="url(#neonBloom)" class="node-c"/></g>
-        <g transform="translate(-73.92, 12.26)"><circle r="2.3" fill="#FFFFFF" filter="url(#neonBloom)" class="node-d"/></g>
-        <g transform="translate(77.94, -10.14)"><circle r="2.1" fill="#FFFFFF" filter="url(#neonBloom)" class="node-b"/></g>
-        <g transform="translate(73.92, 12.26)"><circle r="2.0" fill="#00FF80" filter="url(#neonBloom)" class="node-a"/></g>
-        <g transform="translate(65.88, 15.43)"><circle r="1.8" fill="#FFFFFF" filter="url(#neonBloom)" class="node-c"/></g>
-      </g>
+    <!-- Animated Hoodie Shoulders & Back of Developer -->
+    <g class="sh-l">
+      <path fill="#080808" d="M30,42h1v1h-1zM37,42h1v1h-1zM30,43h1v1h-1zM37,43h1v1h-1zM30,44h1v1h-1zM37,44h1v1h-1zM30,45h1v1h-1zM37,45h1v1h-1zM30,46h1v1h-1zM37,46h1v1h-1zM30,47h1v1h-1zM37,47h1v1h-1zM30,48h1v1h-1zM37,48h1v1h-1zM30,49h1v1h-1zM37,49h1v1h-1zM30,50h1v1h-1zM36,50h1v1h-1zM31,51h1v1h-1zM37,51h1v1h-1zM31,52h1v1h-1zM37,52h1v1h-1zM31,53h1v1h-1zM37,53h1v1h-1zM32,54h1v1h-1zM38,54h1v1h-1z"/>
+      <path fill="#3e5c8a" d="M31,42h1v1h-1zM31,43h1v1h-1zM31,44h1v1h-1zM31,45h1v1h-1zM31,46h1v1h-1zM31,47h1v1h-1zM31,48h1v1h-1zM31,49h1v1h-1zM31,50h1v1h-1zM32,51h1v1h-1zM32,52h1v1h-1zM32,53h1v1h-1zM33,54h1v1h-1z"/>
+      <path fill="#2c446a" d="M32,42h5v1h-5zM32,43h5v1h-5zM32,44h5v1h-5zM32,45h5v1h-5zM32,46h5v1h-5zM32,47h5v1h-5zM32,48h5v1h-5zM32,49h5v1h-5zM32,50h4v1h-4zM33,51h4v1h-4zM33,52h4v1h-4zM33,53h4v1h-4zM34,54h4v1h-4z"/>
+    </g>
+    <g class="sh-r">
+      <path fill="#080808" d="M59,42h1v1h-1zM66,42h1v1h-1zM59,43h1v1h-1zM66,43h1v1h-1zM59,44h1v1h-1zM66,44h1v1h-1zM59,45h1v1h-1zM66,45h1v1h-1zM59,46h1v1h-1zM66,46h1v1h-1zM59,47h1v1h-1zM66,47h1v1h-1zM59,48h1v1h-1zM66,48h1v1h-1zM59,49h1v1h-1zM66,49h1v1h-1zM60,50h1v1h-1zM66,50h1v1h-1zM59,51h1v1h-1zM65,51h1v1h-1zM59,52h1v1h-1zM65,52h1v1h-1zM59,53h1v1h-1zM65,53h1v1h-1zM58,54h1v1h-1zM64,54h1v1h-1z"/>
+      <path fill="#2c446a" d="M60,42h5v1h-5zM60,43h5v1h-5zM60,44h5v1h-5zM60,45h5v1h-5zM60,46h5v1h-5zM60,47h5v1h-5zM60,48h5v1h-5zM60,49h5v1h-5zM61,50h4v1h-4zM60,51h4v1h-4zM60,52h4v1h-4zM60,53h4v1h-4zM59,54h4v1h-4z"/>
+      <path fill="#3e5c8a" d="M65,42h1v1h-1zM65,43h1v1h-1zM65,44h1v1h-1zM65,45h1v1h-1zM65,46h1v1h-1zM65,47h1v1h-1zM65,48h1v1h-1zM65,49h1v1h-1zM65,50h1v1h-1zM64,51h1v1h-1zM64,52h1v1h-1zM64,53h1v1h-1zM63,54h1v1h-1z"/>
+    </g>
+    <g class="dev-bob">
+      <path fill="#080808" d="M41,19h15v1h-15zM41,20h1v1h-1zM55,20h1v1h-1zM41,21h1v1h-1zM55,21h1v1h-1zM38,22h21v1h-21zM38,23h1v1h-1zM40,23h1v1h-1zM56,23h1v1h-1zM58,23h1v1h-1zM38,24h1v1h-1zM40,24h1v1h-1zM56,24h1v1h-1zM58,24h1v1h-1zM38,25h1v1h-1zM40,25h1v1h-1zM56,25h1v1h-1zM58,25h1v1h-1zM38,26h1v1h-1zM40,26h1v1h-1zM56,26h1v1h-1zM58,26h1v1h-1zM38,27h3v1h-3zM56,27h3v1h-3zM35,28h6v1h-6zM56,28h6v1h-6zM35,29h1v1h-1zM40,29h1v1h-1zM56,29h1v1h-1zM61,29h1v1h-1zM35,30h1v1h-1zM40,30h1v1h-1zM56,30h1v1h-1zM61,30h1v1h-1zM35,31h1v1h-1zM40,31h1v1h-1zM56,31h1v1h-1zM61,31h1v1h-1zM35,32h1v1h-1zM40,32h1v1h-1zM56,32h1v1h-1zM61,32h1v1h-1zM35,33h1v1h-1zM40,33h1v1h-1zM56,33h1v1h-1zM61,33h1v1h-1zM35,34h1v1h-1zM40,34h1v1h-1zM56,34h1v1h-1zM61,34h1v1h-1zM35,35h6v1h-6zM56,35h6v1h-6zM40,36h1v1h-1zM56,36h1v1h-1zM42,37h13v1h-13zM42,38h13v1h-13zM39,39h6v1h-6zM52,39h6v1h-6zM39,40h1v1h-1zM44,40h9v1h-9zM57,40h1v1h-1zM37,41h3v1h-3zM57,41h3v1h-3zM37,42h1v1h-1zM39,42h1v1h-1zM57,42h1v1h-1zM59,42h1v1h-1zM37,43h1v1h-1zM39,43h1v1h-1zM57,43h1v1h-1zM59,43h1v1h-1zM37,44h1v1h-1zM39,44h19v1h-19zM59,44h1v1h-1zM37,45h1v1h-1zM59,45h1v1h-1zM37,46h1v1h-1zM59,46h1v1h-1zM37,47h1v1h-1zM59,47h1v1h-1zM37,48h1v1h-1zM59,48h1v1h-1zM37,49h1v1h-1zM59,49h1v1h-1zM37,50h1v1h-1zM59,50h1v1h-1zM37,51h1v1h-1zM59,51h1v1h-1zM37,52h23v1h-23z"/>
+      <path fill="#243858" d="M40,40h2v1h-2zM55,40h2v1h-2zM40,41h2v1h-2zM55,41h2v1h-2zM40,42h2v1h-2zM55,42h2v1h-2zM40,43h17v1h-17z"/>
+      <path fill="#344e78" d="M42,40h2v1h-2zM53,40h2v1h-2zM42,41h2v1h-2zM53,41h2v1h-2zM42,42h2v1h-2zM53,42h2v1h-2z"/>
+      <path fill="#18263e" d="M44,41h9v1h-9zM44,42h9v1h-9z"/>
+      <path fill="#121416" d="M38,42h1v1h-1zM58,42h1v1h-1zM38,43h1v1h-1zM58,43h1v1h-1zM38,44h1v1h-1zM58,44h1v1h-1zM38,45h1v1h-1zM40,45h17v1h-17zM58,45h1v1h-1zM38,46h1v1h-1zM40,46h5v1h-5zM46,46h3v1h-3zM50,46h1v1h-1zM52,46h5v1h-5zM58,46h1v1h-1zM38,47h1v1h-1zM40,47h4v1h-4zM45,47h4v1h-4zM50,47h2v1h-2zM53,47h4v1h-4zM58,47h1v1h-1zM38,48h1v1h-1zM40,48h3v1h-3zM44,48h4v1h-4zM49,48h4v1h-4zM54,48h3v1h-3zM58,48h1v1h-1zM38,49h1v1h-1zM40,49h4v1h-4zM45,49h3v1h-3zM49,49h3v1h-3zM53,49h4v1h-4zM58,49h1v1h-1zM38,50h1v1h-1zM40,50h5v1h-5zM46,50h1v1h-1zM48,50h3v1h-3zM52,50h5v1h-5zM58,50h1v1h-1zM38,51h21v1h-21z"/>
+      <path fill="#1c2024" d="M39,45h1v1h-1zM57,45h1v1h-1zM39,46h1v1h-1zM57,46h1v1h-1zM39,47h1v1h-1zM57,47h1v1h-1zM39,48h1v1h-1zM57,48h1v1h-1zM39,49h1v1h-1zM57,49h1v1h-1zM39,50h1v1h-1zM57,50h1v1h-1z"/>
+      <path fill="#48c660" d="M45,46h1v1h-1zM49,46h1v1h-1zM51,46h1v1h-1zM44,47h1v1h-1zM49,47h1v1h-1zM52,47h1v1h-1zM43,48h1v1h-1zM48,48h1v1h-1zM53,48h1v1h-1zM44,49h1v1h-1zM48,49h1v1h-1zM52,49h1v1h-1zM45,50h1v1h-1zM47,50h1v1h-1zM51,50h1v1h-1z"/>
+      <path fill="#d87640" d="M45,39h7v1h-7z"/>
+      <path fill="#404c56" d="M42,20h13v1h-13zM42,21h13v1h-13z"/>
+      <path fill="#4a5862" d="M39,23h1v1h-1zM57,23h1v1h-1zM39,24h1v1h-1zM57,24h1v1h-1z"/>
+      <path fill="#52342a" d="M41,23h1v1h-1zM43,23h4v1h-4zM48,23h4v1h-4zM53,23h3v1h-3z"/>
+      <path fill="#442a22" d="M42,23h1v1h-1zM47,23h1v1h-1zM52,23h1v1h-1zM41,24h1v1h-1zM46,24h1v1h-1zM51,24h1v1h-1zM45,25h1v1h-1zM50,25h1v1h-1zM55,25h1v1h-1zM44,26h1v1h-1zM49,26h1v1h-1zM54,26h1v1h-1zM43,27h1v1h-1zM48,27h1v1h-1zM53,27h1v1h-1zM42,28h1v1h-1zM47,28h1v1h-1zM52,28h1v1h-1zM41,29h1v1h-1zM46,29h1v1h-1zM51,29h1v1h-1zM45,30h1v1h-1zM50,30h1v1h-1zM55,30h1v1h-1z"/>
+      <path fill="#2e1a16" d="M42,24h4v1h-4zM47,24h4v1h-4zM52,24h4v1h-4zM41,25h4v1h-4zM46,25h4v1h-4zM51,25h4v1h-4zM41,26h3v1h-3zM45,26h4v1h-4zM50,26h4v1h-4zM55,26h1v1h-1zM41,27h2v1h-2zM44,27h4v1h-4zM49,27h4v1h-4zM54,27h2v1h-2zM41,28h1v1h-1zM43,28h4v1h-4zM48,28h4v1h-4zM53,28h3v1h-3zM42,29h4v1h-4zM47,29h4v1h-4zM52,29h4v1h-4zM41,30h4v1h-4zM46,30h4v1h-4zM51,30h4v1h-4zM41,31h15v1h-15zM41,32h15v1h-15zM41,33h15v1h-15zM41,34h15v1h-15z"/>
+      <path fill="#3a4650" d="M39,25h1v1h-1zM57,25h1v1h-1zM39,26h1v1h-1zM57,26h1v1h-1z"/>
+      <path fill="#2e3840" d="M36,29h4v1h-4zM57,29h4v1h-4zM36,30h4v1h-4zM57,30h4v1h-4zM36,31h1v1h-1zM38,31h2v1h-2zM57,31h2v1h-2zM60,31h1v1h-1zM36,32h1v1h-1zM38,32h2v1h-2zM57,32h2v1h-2zM60,32h1v1h-1zM36,33h4v1h-4zM57,33h4v1h-4zM36,34h4v1h-4zM57,34h4v1h-4z"/>
+      <path fill="#c46638" d="M41,35h15v1h-15zM41,36h15v1h-15z"/>
+      <path fill="#3fb950" d="M37,31h1v1h-1zM59,31h1v1h-1zM37,32h1v1h-1zM59,32h1v1h-1z"/>
     </g>
   </g>
 </svg>
