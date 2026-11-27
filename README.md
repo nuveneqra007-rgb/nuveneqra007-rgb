@@ -18,8 +18,20 @@
     <img src="https://img.shields.io/badge/◈_PORTFOLIO_3D-050706?style=for-the-badge&logoColor=00FF66&color=121212&labelColor=050706" alt="Portfolio 3D"/>
   </a>
   &nbsp;
-  <a href="https://secscanner.dpdns.org/" target="_blank">
+  <a href="https://secscanner0-1.vercel.app/" target="_blank">
     <img src="https://img.shields.io/badge/⟁_SECSCANNER_LIVE-050706?style=for-the-badge&logoColor=00FF66&color=121212&labelColor=050706" alt="SecScanner"/>
+  </a>
+  &nbsp;
+  <a href="https://supern01.vercel.app/" target="_blank">
+    <img src="https://img.shields.io/badge/⚔_SUPERN-050706?style=for-the-badge&logoColor=00FF66&color=121212&labelColor=050706" alt="SuperN"/>
+  </a>
+  &nbsp;
+  <a href="https://novaai-bay.vercel.app/" target="_blank">
+    <img src="https://img.shields.io/badge/✦_NOVA_AI-050706?style=for-the-badge&logoColor=00FF66&color=121212&labelColor=050706" alt="Nova AI"/>
+  </a>
+  &nbsp;
+  <a href="https://sistema-de-farmacia.vercel.app/" target="_blank">
+    <img src="https://img.shields.io/badge/✚_TU_FARMACIA-050706?style=for-the-badge&logoColor=00FF66&color=121212&labelColor=050706" alt="Tu Farmacia"/>
   </a>
   &nbsp;
   <a href="mailto:miguelalexanderlopezmendosa23@gmail.com">
