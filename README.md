@@ -1,6 +1,6 @@
 <div align="center">
 
-<!-- ── HERO MINIMALISTA: ALEXANDER + NINJA FLOTANTE ── -->
+<!-- ── HERO MINIMALISTA: ALEXANDER + EMBLEMA APPSEC 3D ── -->
 <img src="assets/hero_minimal.svg" width="100%" alt="Alexander López — Full-Stack Developer & AppSec" />
 
 <br/>
@@ -41,7 +41,9 @@
 
 </div>
 
----
+<div align="center">
+  <img src="assets/divider_scanner.svg" width="100%" alt="Cyber Data Scanner Divider" />
+</div>
 
 ### Sobre mí
 
@@ -49,7 +51,9 @@ Soy desarrollador Full-Stack y entusiasta de la ciberseguridad desde **Repúblic
 
 > *"Transformando código en experiencias visuales fluidas de alto rendimiento y arquitecturas web seguras y resilientes."*
 
----
+<div align="center">
+  <img src="assets/divider_scanner.svg" width="100%" alt="Cyber Data Scanner Divider" />
+</div>
 
 ### Tech Stack
 
@@ -132,12 +136,14 @@ Soy desarrollador Full-Stack y entusiasta de la ciberseguridad desde **Repúblic
 
 <br/>
 
----
+<div align="center">
+  <img src="assets/divider_scanner.svg" width="100%" alt="Cyber Data Scanner Divider" />
+</div>
 
 <!-- ── ACTIVIDAD: SNAKE CONTRIBUTION GRID ── -->
 <div align="center">
 
-<img src="assets/snake.svg" width="100%" alt="Snake Game Contribution Animation" />
+<img src="assets/snake.svg" width="100%" alt="SecScanner Cyber-Snake Contribution Animation" />
 
 </div>
 

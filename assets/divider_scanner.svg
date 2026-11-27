@@ -1,0 +1,135 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 52" width="900" height="52" role="img" aria-label="Cyber Data Scanner Divider">
+  <defs>
+    <!-- Horizontal cyber-laser fading gradient (transparent at both ends) -->
+    <linearGradient id="laserLineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#2ea043" stop-opacity="0"/>
+      <stop offset="12%" stop-color="#2ea043" stop-opacity="0.28"/>
+      <stop offset="36%" stop-color="#3fb950" stop-opacity="0.92"/>
+      <stop offset="47%" stop-color="#A8FFCB" stop-opacity="0.95"/>
+      <stop offset="50%" stop-color="#FFFFFF" stop-opacity="0"/>
+      <stop offset="53%" stop-color="#A8FFCB" stop-opacity="0.95"/>
+      <stop offset="64%" stop-color="#3fb950" stop-opacity="0.92"/>
+      <stop offset="88%" stop-color="#2ea043" stop-opacity="0.28"/>
+      <stop offset="100%" stop-color="#2ea043" stop-opacity="0"/>
+    </linearGradient>
+
+    <radialGradient id="nodeAura" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#3fb950" stop-opacity="0.45"/>
+      <stop offset="55%" stop-color="#2ea043" stop-opacity="0.14"/>
+      <stop offset="100%" stop-color="#2ea043" stop-opacity="0"/>
+    </radialGradient>
+
+    <linearGradient id="diamondCoreFill" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#134E2E" stop-opacity="0.88"/>
+      <stop offset="55%" stop-color="#072215" stop-opacity="0.82"/>
+      <stop offset="100%" stop-color="#2ea043" stop-opacity="0.45"/>
+    </linearGradient>
+
+    <filter id="laserGlow" x="-30%" y="-80%" width="160%" height="260%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2.6" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="diamondBloom" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2.2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <style>
+      .bits {
+        font-family: "Fira Code", "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+        font-size: 8.5px;
+        font-weight: 700;
+        letter-spacing: 0.9px;
+        fill: #98FFBD;
+      }
+      @keyframes coreFloat {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-1.5px); }
+      }
+      @keyframes bitTwinkle {
+        0%, 100% { opacity: 0.35; }
+        50% { opacity: 1; }
+      }
+      @keyframes scanPulse {
+        0%, 100% { opacity: 0.78; }
+        50% { opacity: 1; }
+      }
+      .center-node { animation: coreFloat 3.6s ease-in-out infinite; }
+      .laser-beam { animation: scanPulse 2.8s ease-in-out infinite; }
+      .px-a { animation: bitTwinkle 2.1s ease-in-out infinite; }
+      .px-b { animation: bitTwinkle 2.1s ease-in-out 0.7s infinite; }
+      .px-c { animation: bitTwinkle 2.1s ease-in-out 1.4s infinite; }
+    </style>
+  </defs>
+
+  <!-- Soft aura behind center node -->
+  <ellipse cx="450" cy="26" rx="44" ry="24" fill="url(#nodeAura)"/>
+
+  <!-- Horizontal fading cyber-laser line -->
+  <g class="laser-beam">
+    <rect x="20" y="24.2" width="860" height="3.6" fill="url(#laserLineGrad)" filter="url(#laserGlow)" opacity="0.65"/>
+    <rect x="20" y="25.2" width="860" height="1.6" fill="url(#laserLineGrad)"/>
+  </g>
+
+  <!-- Left glitch data pixels & '0101' bits -->
+  <g class="bits">
+    <text x="394" y="39" class="px-a">0101</text>
+    <text x="488" y="18" class="px-b">0101</text>
+  </g>
+  <g shape-rendering="crispEdges">
+    <rect x="383" y="35" width="3" height="1.5" fill="#2ea043" class="px-b"/>
+    <rect x="403" y="18" width="5" height="1.5" fill="#3fb950" class="px-a"/>
+    <rect x="415" y="14" width="2" height="2" fill="#8EFFB5" class="px-c"/>
+    <rect x="418" y="34" width="3" height="3" fill="#3fb950" class="px-b"/>
+    <rect x="424" y="42" width="3" height="3" fill="#2ea043" class="px-a"/>
+    <rect x="422" y="20" width="2" height="2" fill="#FFFFFF" class="px-c"/>
+
+    <rect x="476" y="13" width="2" height="2" fill="#FFFFFF" class="px-a"/>
+    <rect x="479" y="35" width="3" height="3" fill="#3fb950" class="px-c"/>
+    <rect x="473" y="41" width="2" height="2" fill="#2ea043" class="px-b"/>
+    <rect x="490" y="33" width="4" height="2" fill="#3fb950" class="px-a"/>
+    <rect x="515" y="14" width="3" height="1.5" fill="#2ea043" class="px-c"/>
+    <rect x="522" y="14" width="2" height="1.5" fill="#8EFFB5" class="px-a"/>
+  </g>
+
+  <!-- Center 2D pixel-cyber wireframe diamond / octahedron node -->
+  <g class="center-node" filter="url(#diamondBloom)">
+    <!-- Translucent dark emerald interior -->
+    <polygon points="450,7 470,26 450,45 430,26" fill="url(#diamondCoreFill)"/>
+
+    <!-- Inner wireframe mesh (neon green) -->
+    <g fill="none" stroke="#3fb950" stroke-width="1.2" stroke-linejoin="round" stroke-linecap="round">
+      <!-- Outer silhouette lower half -->
+      <polyline points="430,26 450,45 470,26"/>
+      <!-- Internal 3D facets -->
+      <line x1="430" y1="26" x2="444" y2="29"/>
+      <line x1="444" y1="29" x2="459" y2="23"/>
+      <line x1="459" y1="23" x2="470" y2="26"/>
+      <line x1="450" y1="45" x2="444" y2="29"/>
+      <line x1="450" y1="45" x2="459" y2="23"/>
+      <line x1="450" y1="7" x2="444" y2="29"/>
+      <line x1="450" y1="7" x2="459" y2="23"/>
+      <line x1="436" y1="26" x2="450" y2="18"/>
+      <line x1="450" y1="18" x2="464" y2="26"/>
+      <line x1="450" y1="18" x2="450" y2="45"/>
+    </g>
+
+    <!-- Crisp white-bright top & front diamond highlights -->
+    <g fill="none" stroke="#FFFFFF" stroke-width="1.35" stroke-linejoin="round" stroke-linecap="round">
+      <polyline points="430,26 450,7 470,26"/>
+      <polyline points="434,26 450,10 466,26"/>
+      <line x1="450" y1="7" x2="450" y2="27"/>
+      <line x1="434" y1="26" x2="466" y2="26"/>
+    </g>
+
+    <!-- Core bright vertex spark -->
+    <rect x="448.8" y="24.8" width="2.4" height="2.4" fill="#FFFFFF"/>
+  </g>
+</svg>
