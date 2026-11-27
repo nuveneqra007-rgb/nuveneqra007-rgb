@@ -20,11 +20,33 @@
       <stop offset="0%" stop-color="#8DF25A"/>
       <stop offset="100%" stop-color="#48D456"/>
     </linearGradient>
-    <radialGradient id="ninjaGlow" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#00FF66" stop-opacity="0.24"/>
-      <stop offset="60%" stop-color="#006633" stop-opacity="0.12"/>
+    <radialGradient id="orbGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#00FF80" stop-opacity="0.34"/>
+      <stop offset="45%" stop-color="#00E676" stop-opacity="0.16"/>
+      <stop offset="75%" stop-color="#006633" stop-opacity="0.06"/>
       <stop offset="100%" stop-color="#004D26" stop-opacity="0"/>
     </radialGradient>
+    <radialGradient id="orbShellFill" cx="50%" cy="48%" r="54%">
+      <stop offset="0%" stop-color="#0A3B24" stop-opacity="0.45"/>
+      <stop offset="65%" stop-color="#052114" stop-opacity="0.62"/>
+      <stop offset="100%" stop-color="#00E676" stop-opacity="0.22"/>
+    </radialGradient>
+    <filter id="neonBloom" x="-45%" y="-45%" width="190%" height="190%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2.4" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="eyeBloom" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="3.2" result="blur1"/>
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1.1" result="blur2"/>
+      <feMerge>
+        <feMergeNode in="blur1"/>
+        <feMergeNode in="blur2"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
     <clipPath id="heroWaveClip">
       <path d="M 0,16 Q 0,0 16,0 L 884,0 Q 900,0 900,16 L 900,184 C 745,232 585,154 420,192 C 245,232 108,176 0,204 Z"/>
     </clipPath>
@@ -48,29 +70,49 @@
         font-size: 12.5px;
         fill: #96B3A2;
       }
-      .pixel {
-        image-rendering: pixelated;
-        image-rendering: crisp-edges;
-      }
-      @keyframes floatNinja {
+      @keyframes floatOrb {
         0%, 100% { transform: translateY(0px); }
-        50% { transform: translateY(-9px); }
+        50% { transform: translateY(-7px); }
       }
       @keyframes shadowPulse {
-        0%, 100% { transform: scaleX(1); opacity: 0.48; }
-        50% { transform: scaleX(0.76); opacity: 0.22; }
+        0%, 100% { transform: scaleX(1); opacity: 0.45; }
+        50% { transform: scaleX(0.8); opacity: 0.2; }
+      }
+      @keyframes auraPulse {
+        0%, 100% { opacity: 0.8; transform: scale(1); }
+        50% { opacity: 1; transform: scale(1.06); }
+      }
+      @keyframes corePulse {
+        0%, 100% { opacity: 0.92; transform: scale(1); }
+        50% { opacity: 1; transform: scale(1.08); }
+      }
+      @keyframes nodeBlink {
+        0%, 100% { opacity: 0.22; transform: scale(0.75); }
+        45%, 55% { opacity: 1; transform: scale(1.25); }
       }
       @keyframes waveDrift {
         0%, 100% { transform: translateX(0px); }
         50% { transform: translateX(-20px); }
       }
-      .ninja-wrap {
-        animation: floatNinja 3.2s ease-in-out infinite;
+      .orb-wrap {
+        animation: floatOrb 3.4s ease-in-out infinite;
+      }
+      .orb-aura {
+        transform-origin: 765px 100px;
+        animation: auraPulse 3.4s ease-in-out infinite;
       }
       .shadow-wrap {
-        transform-origin: 774px 164px;
-        animation: shadowPulse 3.2s ease-in-out infinite;
+        transform-origin: 765px 175px;
+        animation: shadowPulse 3.4s ease-in-out infinite;
       }
+      .eye-core {
+        transform-origin: 0px 0px;
+        animation: corePulse 2.6s ease-in-out infinite;
+      }
+      .node-a { animation: nodeBlink 2.2s ease-in-out infinite; }
+      .node-b { animation: nodeBlink 2.2s ease-in-out 0.7s infinite; }
+      .node-c { animation: nodeBlink 2.2s ease-in-out 1.4s infinite; }
+      .node-d { animation: nodeBlink 2.6s ease-in-out 0.35s infinite; }
       .wave-accent {
         animation: waveDrift 8s ease-in-out infinite;
       }
@@ -86,8 +128,10 @@
   <!-- Crisp luminous wave rim -->
   <path d="M 0,204 C 108,176 245,232 420,192 C 585,154 745,232 900,184" fill="none" stroke="url(#waveRim)" stroke-width="1.5"/>
 
-  <!-- Ambient glow centered behind flipped ninja -->
-  <circle cx="774" cy="102" r="80" fill="url(#ninjaGlow)"/>
+  <!-- Volumetric glow centered behind the AppSec 3D orb -->
+  <g class="orb-aura">
+    <circle cx="765" cy="100" r="88" fill="url(#orbGlow)"/>
+  </g>
 
   <!-- Left: Human greeting + Hackbit-inspired Alexander López + crisp tagline -->
   <text x="48" y="42" class="kicker">Hola 👋 soy</text>
@@ -118,13 +162,72 @@
   <text x="48" y="148" class="tagline">Construyendo en la web con seguridad y estilo.</text>
   <text x="48" y="171" class="submeta">República Dominicana · Full-Stack, AppSec &amp; Web 3D</text>
 
-  <!-- Right: Floating pixel-art ninja FLIPPED to face left toward the name -->
+  <!-- Right: Floating AppSec 3D Polygonal Orb with Scanner Eye & Orbital Nodes -->
   <g class="shadow-wrap">
-    <ellipse cx="774" cy="164" rx="28" ry="5.5" fill="#000000"/>
+    <ellipse cx="765" cy="175" rx="34" ry="5.5" fill="#001A0D"/>
   </g>
-  <g class="ninja-wrap">
-    <g transform="translate(822, 42) scale(-1, 1)">
-      <image class="pixel" x="0" y="0" width="110" height="120" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEUAAABLCAYAAAAmh0pZAAAC2UlEQVR4AeyYwXXCMAyGRadgDLpBhugIPXaEHhmBY0dgCA4dgDE4dgNqP2I/4fxxbEfBJqgvahzZluTPEoa8kf4NCCiUARIihaJQAAGg0kxRKIAAUGmmKBRAAKg0UxQKIABUmikKBRAAKs0UhQIIANV6MwUsNlU1F8rVOJIWY7LuNRdK3egX8q5QAFgxKLvdjnaFAuKqqhKDUnUVws4VCgC6CJTz+UznDAFxVVUtAqXqigScKxQAUQzK5XIhJ9fjnrz8fNG1F+7f95uxXN9CWwxKC4uRikGhAJJzoWyMTSemebve90fycvil9174lzvfb8beZrXzfy6UdlYiGEnjUARXmmEqBiXrlYA7ecL7WCx83NiYWvoYlFoxVferUMAWhFB8yWy3WyoVXhpjv4H4mCAuH0Ogf9hjCOVhjlt2pFDA7lgoPl15ufD0zm0DP6UqH1upgZJ5FkrJvFXPUShge++g8DIBY6Oqruuo66Xl1wLRRfSdd1B63cvfFApIAQvF/fS3dzAkTXU6nejUS9qM7FH8JOLtbENTEyyUqTEv1/8IKE8HNYRiS8hJ+WL+LkROyq3czez6k83eg9NNvJRCKHeBvOqDQgE7H4PiysjewdRx1ebzQE7GR+X1uJPN3vNm5o+OQcm3tpIZCgVsZCoUW0JTAszPVnGf3tjm45uceKVgIxWKoMv2TSkUsEetQ+FfzHgpjbXBEvNVrUPJX5HADIUCIM6FwtMbmM9X8ZfnwWxxX4F9/zgXije0pkYylDUtemotJVAm0zhSApOnBn95HrEzGcPUwmP9JVBi9lbRp1DANopB4anOS8D45CVjHuEFx3A73D60IKgUgyIYU3VTCgVsQSoU+GnPU5qnuvEDy8Hox66l7Y/5hfpUKHDyWpUKBexsDMrSKb20fbDcNFUMSpqFFY5SKGBTs6HwU4afPsY2LAejz7qWtp8STDaUFKPPNWYYrUIZMqF/AAAA//+foXqxAAAABklEQVQDALrmkTgpmmpHAAAAAElFTkSuQmCC"/>
+  <g class="orb-wrap">
+    <g transform="translate(765, 100)">
+      <!-- Back orbital arcs (behind orb shell) -->
+      <g transform="rotate(-20)" fill="none" stroke="#2BFF88" stroke-width="0.95" stroke-opacity="0.45">
+        <path d="M -86,0 A 86,24 0 0,1 86,0"/>
+      </g>
+      <g transform="rotate(20)" fill="none" stroke="#2BFF88" stroke-width="0.95" stroke-opacity="0.45">
+        <path d="M -86,0 A 86,24 0 0,1 86,0"/>
+      </g>
+
+      <!-- Translucent polygonal sphere shell -->
+      <polygon points="0.0,-60.0 30.0,-51.96 51.96,-30.0 60.0,0.0 51.96,30.0 30.0,51.96 0.0,60.0 -30.0,51.96 -51.96,30.0 -60.0,0.0 -51.96,-30.0 -30.0,-51.96" fill="url(#orbShellFill)"/>
+
+      <!-- Back-hemisphere ghost wireframe for 3D depth -->
+      <path d="M0.0,-45.5 L22.75,39.4 M0.0,-36.5 L51.96,-30.0 M22.75,-39.4 L0.0,45.5 M18.25,-31.61 L60.0,0.0 M39.4,-22.75 L-22.75,39.4 M31.61,-18.25 L51.96,30.0 M45.5,0.0 L-39.4,22.75 M36.5,0.0 L30.0,51.96 M39.4,22.75 L-45.5,0.0 M31.61,18.25 L0.0,60.0 M22.75,39.4 L-39.4,-22.75 M18.25,31.61 L-30.0,51.96 M0.0,45.5 L-22.75,-39.4 M0.0,36.5 L-51.96,30.0 M-22.75,39.4 L0.0,-45.5 M-18.25,31.61 L-60.0,0.0 M-39.4,22.75 L22.75,-39.4 M-31.61,18.25 L-51.96,-30.0 M-45.5,0.0 L39.4,-22.75 M-36.5,0.0 L-30.0,-51.96 M-39.4,-22.75 L45.5,0.0 M-31.61,-18.25 L0.0,-60.0 M-22.75,-39.4 L39.4,22.75 M-18.25,-31.61 L30.0,-51.96" fill="none" stroke="#00FF80" stroke-width="0.65" stroke-opacity="0.22"/>
+
+      <!-- Main neon green geodesic wireframe mesh -->
+      <g filter="url(#neonBloom)">
+        <path d="M0.0,-60.0 L30.0,-51.96 M0.0,-45.5 L22.75,-39.4 M0.0,-60.0 L22.75,-39.4 M0.0,-60.0 L-22.75,-39.4 M0.0,-60.0 L0.0,-45.5 M0.0,-45.5 L0.0,-36.5 M0.0,-36.5 L0.0,-22.0 M0.0,-22.0 L13.0,-19.05 M30.0,-51.96 L51.96,-30.0 M22.75,-39.4 L39.4,-22.75 M30.0,-51.96 L22.75,-39.4 M22.75,-39.4 L18.25,-31.61 M22.75,-39.4 L31.61,-18.25 M22.75,-39.4 L0.0,-36.5 M18.25,-31.61 L13.0,-19.05 M13.0,-19.05 L22.52,-11.0 M51.96,-30.0 L60.0,0.0 M39.4,-22.75 L45.5,0.0 M51.96,-30.0 L45.5,0.0 M51.96,-30.0 L22.75,-39.4 M51.96,-30.0 L39.4,-22.75 M39.4,-22.75 L31.61,-18.25 M31.61,-18.25 L22.52,-11.0 M22.52,-11.0 L26.0,0.0 M60.0,0.0 L51.96,30.0 M45.5,0.0 L39.4,22.75 M60.0,0.0 L45.5,0.0 M45.5,0.0 L36.5,0.0 M45.5,0.0 L31.61,18.25 M45.5,0.0 L31.61,-18.25 M36.5,0.0 L26.0,0.0 M26.0,0.0 L22.52,11.0 M51.96,30.0 L30.0,51.96 M39.4,22.75 L22.75,39.4 M51.96,30.0 L22.75,39.4 M51.96,30.0 L45.5,0.0 M51.96,30.0 L39.4,22.75 M39.4,22.75 L31.61,18.25 M31.61,18.25 L22.52,11.0 M22.52,11.0 L13.0,19.05 M30.0,51.96 L0.0,60.0 M22.75,39.4 L0.0,45.5 M30.0,51.96 L22.75,39.4 M22.75,39.4 L18.25,31.61 M22.75,39.4 L0.0,36.5 M22.75,39.4 L31.61,18.25 M18.25,31.61 L13.0,19.05 M13.0,19.05 L0.0,22.0 M0.0,60.0 L-30.0,51.96 M0.0,45.5 L-22.75,39.4 M0.0,60.0 L-22.75,39.4 M0.0,60.0 L22.75,39.4 M0.0,60.0 L0.0,45.5 M0.0,45.5 L0.0,36.5 M0.0,36.5 L0.0,22.0 M0.0,22.0 L-13.0,19.05 M-30.0,51.96 L-51.96,30.0 M-22.75,39.4 L-39.4,22.75 M-30.0,51.96 L-22.75,39.4 M-22.75,39.4 L-18.25,31.61 M-22.75,39.4 L-31.61,18.25 M-22.75,39.4 L0.0,36.5 M-18.25,31.61 L-13.0,19.05 M-13.0,19.05 L-22.52,11.0 M-51.96,30.0 L-60.0,0.0 M-39.4,22.75 L-45.5,0.0 M-51.96,30.0 L-45.5,0.0 M-51.96,30.0 L-22.75,39.4 M-51.96,30.0 L-39.4,22.75 M-39.4,22.75 L-31.61,18.25 M-31.61,18.25 L-22.52,11.0 M-22.52,11.0 L-26.0,0.0 M-60.0,0.0 L-51.96,-30.0 M-45.5,0.0 L-39.4,-22.75 M-60.0,0.0 L-45.5,0.0 M-45.5,0.0 L-36.5,0.0 M-45.5,0.0 L-31.61,-18.25 M-45.5,0.0 L-31.61,18.25 M-36.5,0.0 L-26.0,0.0 M-26.0,0.0 L-22.52,-11.0 M-51.96,-30.0 L-30.0,-51.96 M-39.4,-22.75 L-22.75,-39.4 M-51.96,-30.0 L-22.75,-39.4 M-51.96,-30.0 L-45.5,0.0 M-51.96,-30.0 L-39.4,-22.75 M-39.4,-22.75 L-31.61,-18.25 M-31.61,-18.25 L-22.52,-11.0 M-22.52,-11.0 L-13.0,-19.05 M-30.0,-51.96 L0.0,-60.0 M-22.75,-39.4 L0.0,-45.5 M-30.0,-51.96 L-22.75,-39.4 M-22.75,-39.4 L-18.25,-31.61 M-22.75,-39.4 L0.0,-36.5 M-22.75,-39.4 L-31.61,-18.25 M-18.25,-31.61 L-13.0,-19.05 M-13.0,-19.05 L0.0,-22.0 M0.0,-60.0 L0.0,-22.0 M0.0,22.0 L0.0,60.0 M60.0,0.0 L26.0,0.0 M-26.0,0.0 L-60.0,0.0" fill="none" stroke="#1BFF85" stroke-width="1.2" stroke-linejoin="round" stroke-linecap="round"/>
+        <!-- Highlighted inner mint-white ring -->
+        <path d="M0.0,-36.5 L18.25,-31.61 L31.61,-18.25 L36.5,0.0 L31.61,18.25 L18.25,31.61 L0.0,36.5 L-18.25,31.61 L-31.61,18.25 L-36.5,0.0 L-31.61,-18.25 L-18.25,-31.61 Z" fill="none" stroke="#C8FFE0" stroke-width="1.05" stroke-opacity="0.88" stroke-linejoin="round"/>
+      </g>
+
+      <!-- Tiny suspended scanner particles inside orb -->
+      <g transform="translate(-18, -14)"><circle r="1.2" fill="#FFFFFF" class="node-b"/></g>
+      <g transform="translate(20, -16)"><circle r="1.3" fill="#FFFFFF" class="node-c"/></g>
+      <g transform="translate(9, 24)"><circle r="1.1" fill="#A7FFCB" class="node-a"/></g>
+
+      <!-- Bright white geometric scanner eye in core -->
+      <g filter="url(#eyeBloom)">
+        <g class="eye-core" fill="none" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round">
+          <!-- Almond eye silhouette -->
+          <path d="M -23,0 Q 0,-19 23,0 Q 0,19 -23,0 Z" stroke-width="2.1"/>
+          <!-- Crosshairs -->
+          <line x1="-21" y1="0" x2="21" y2="0" stroke-width="1.25"/>
+          <line x1="0" y1="-12.5" x2="0" y2="12.5" stroke-width="1.25"/>
+          <!-- Outer & segmented HUD iris rings -->
+          <circle cx="0" cy="0" r="11.2" stroke-width="1.35"/>
+          <path d="M -6.2,-4.5 A 7.6,7.6 0 0,1 -4.5,-6.2 M 4.5,-6.2 A 7.6,7.6 0 0,1 6.2,-4.5 M 6.2,4.5 A 7.6,7.6 0 0,1 4.5,6.2 M -4.5,6.2 A 7.6,7.6 0 0,1 -6.2,4.5" stroke-width="1.2"/>
+          <!-- Luminous pupil core -->
+          <polygon points="0,-4.5 4.5,0 0,4.5 -4.5,0" fill="#FFFFFF" stroke="none"/>
+          <circle cx="0" cy="0" r="3" fill="#FFFFFF" stroke="none"/>
+        </g>
+      </g>
+
+      <!-- Front orbital arcs & intermittent blinking orbital nodes -->
+      <g transform="rotate(-20)">
+        <path d="M -86,0 A 86,24 0 0,0 86,0" fill="none" stroke="#3BFF95" stroke-width="1.1" stroke-opacity="0.78"/>
+        <g transform="translate(-77.94, -10.14)"><circle r="2.3" fill="#FFFFFF" filter="url(#neonBloom)" class="node-a"/></g>
+        <g transform="translate(-83.07, 6.21)"><circle r="1.9" fill="#00FF80" filter="url(#neonBloom)" class="node-b"/></g>
+        <g transform="translate(-65.88, 15.43)"><circle r="2.1" fill="#FFFFFF" filter="url(#neonBloom)" class="node-c"/></g>
+        <g transform="translate(70.45, -13.77)"><circle r="2.2" fill="#00FF80" filter="url(#neonBloom)" class="node-d"/></g>
+        <g transform="translate(80.81, 8.21)"><circle r="2.2" fill="#FFFFFF" filter="url(#neonBloom)" class="node-a"/></g>
+      </g>
+      <g transform="rotate(20)">
+        <path d="M -86,0 A 86,24 0 0,0 86,0" fill="none" stroke="#3BFF95" stroke-width="1.1" stroke-opacity="0.78"/>
+        <g transform="translate(-77.94, -10.14)"><circle r="2.0" fill="#00FF80" filter="url(#neonBloom)" class="node-c"/></g>
+        <g transform="translate(-73.92, 12.26)"><circle r="2.3" fill="#FFFFFF" filter="url(#neonBloom)" class="node-d"/></g>
+        <g transform="translate(77.94, -10.14)"><circle r="2.1" fill="#FFFFFF" filter="url(#neonBloom)" class="node-b"/></g>
+        <g transform="translate(73.92, 12.26)"><circle r="2.0" fill="#00FF80" filter="url(#neonBloom)" class="node-a"/></g>
+        <g transform="translate(65.88, 15.43)"><circle r="1.8" fill="#FFFFFF" filter="url(#neonBloom)" class="node-c"/></g>
+      </g>
     </g>
   </g>
 </svg>
